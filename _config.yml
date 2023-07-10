@@ -2,9 +2,7 @@ title: CasioCalc Dumping Ground
 theme: just-the-docs
 color_scheme: dark
 
-markdown: kramdown
 kramdown:
-  input: GFM
   math_engine: mathjax
 
 url: https://gamingwithevets.github.io

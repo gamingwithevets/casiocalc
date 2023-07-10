@@ -136,7 +136,7 @@ Note: LaTeX formulas are used to show the characters, instead of Unicode charact
 | `79h` | cs28                            | `y`             |
 | `7Ah` | cs29                            | `z`             |
 | `7Bh` | {                               | `{`             |
-| `7Ch` | @                               | `\|` _(cursor)_ |
+| `7Ch` | @                               | `|` _(cursor)_  |
 | `7Dh` | }                               | `}`             |
 | `7Eh` | xor                             |                 |
 | `7Fh` | xnor                            |                 |
