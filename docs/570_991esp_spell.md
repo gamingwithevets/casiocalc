@@ -3,6 +3,9 @@ title: fx-570/991ES PLUS Spelling
 layout: default
 ---
 
+*Written by LifeEmu (`lifeemu`)*
+
+```
 (from https://tieba.baidu.com/p/2473766810)
 
 NOTE: This method is only tested on fx-991ES PLUS! It should work on fx-570ES PLUS, but no other models are supported! Make sure you have the right model!
@@ -50,3 +53,4 @@ NOTE: This method is only tested on fx-991ES PLUS! It should work on fx-570ES PL
 12. After you've done all of these, press [AC] [left] [=].
 	4 lines of ASCII characters should appear on the screen!
 	The cursor will be flashing, pressing [SHIFT] [CALC] should make it disappear, but it doesn't work 100% of the time.
+```
