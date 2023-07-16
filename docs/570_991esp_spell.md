@@ -3,6 +3,8 @@ title: fx-570/991ES PLUS Spelling
 layout: default
 ---
 
+**NOTE:** There is a faster spelling method on fx-570/991ES PLUS. It can be found on [the Casio calculator hacking Discord server](http://discord.gg/QjGpH6rSQQ).
+
 *Written by LifeEmu (`lifeemu`)*
 
 ```
