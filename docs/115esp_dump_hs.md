@@ -5,7 +5,7 @@ layout: default
 
 This page lists the hackstring used to dump the real ROM of the fx-115ES PLUS. I don't have the actual dumped ROM yet, however it's pretty cool to see the hackstring used.
 
-*Hackstring author unconfirmed, possibly user202729*
+*Hackstring author unconfirmed*
 ```
 ======== dump_render ========
 Program:

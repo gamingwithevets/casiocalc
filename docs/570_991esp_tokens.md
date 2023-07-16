@@ -3,7 +3,7 @@ title: Token List
 layout: default
 ---
 
-*Written by pyridinephenol*
+*Written by LifeEmu (`lifeemu`)*
 
 I didn't find a token list in my phone so I spent like an hour to recreate it from scratch.  
 Note: LaTeX formulas are used to show the characters, instead of Unicode characters.
