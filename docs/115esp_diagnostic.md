@@ -7,7 +7,7 @@ Below is the diagnostic mode's code found in the real fx-115ES PLUS ROM.
 
 *Disassembly provided by LifeEmu (`lifeemu`)*
 
-```asm
+```nasm
 namespace ?os
 	?render			:=	03B5Ch
 	?LCD_fill		:=	07008h
