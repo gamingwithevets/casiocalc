@@ -4,7 +4,6 @@ layout: default
 ---
 
 *Written by LifeEmu (`lifeemu`)*
-```
 
 ======== dump_render ========
 Description:
