@@ -5,7 +5,7 @@ layout: default
 
 This page contains a list of addresses in the `GY454X VerE` real ROM that follow a `POP PC`, `RT`, `RTI` or `BAL` instruction but never get called or jumped to.
 
-This list was created with the help of [PyU8disas](https://github.com/gamingwithevets/pyu8disas), my nX-U8/100 disassembler, which is still in active development. Therefore the list may not be 100% accurate and may get updated over time.
+This list was created with the help of my nX-U8/100 disassembler [PyU8disas](https://github.com/gamingwithevets/pyu8disas), which is still in active development. Therefore **the list may not be 100% accurate** and **may get updated over time**.
 
 user202729 also labeled (and even used) some of these unused functions, obviously with no idea they are actually unused.
 
