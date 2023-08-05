@@ -1,5 +1,5 @@
 ---
-title: fx-115ES PLUS Diagnostic Code
+title: fx-115ES+ Diagnostic Code
 layout: default
 ---
 

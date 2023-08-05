@@ -1,5 +1,5 @@
 ---
-title: fx-115ES PLUS ROM Dump Hackstring
+title: fx-115ES+ ROM Dump Hackstring
 layout: default
 ---
 

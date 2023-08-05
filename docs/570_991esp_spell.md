@@ -1,5 +1,5 @@
 ---
-title: fx-570/991ES PLUS Spelling
+title: fx-570/991ES+ Spelling
 layout: default
 ---
 
