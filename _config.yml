@@ -8,9 +8,9 @@ kramdown:
 url: https://gamingwithevets.github.io
 
 aux_links:
-  "GitHub repository": "//github.com/casiocalc/casiocalc.github.io"
+  "GitHub repository": "//github.com/gamingwithevets/casiocalc"
 
-footer_content: "(c) Steveyboi/GamingWithEvets Inc. -- <a href=\"/\">gamingwithevets.github.io</a><br><b>All rights reserved</b>"
+footer_content: "(c) Steveyboi/GamingWithEvets Inc. -- <a href=\"/\">gamingwithevets.github.io</a>"
 
 nav_sort: case_insensitive
 
