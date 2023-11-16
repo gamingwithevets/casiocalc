@@ -8,7 +8,7 @@ layout: default
  
 ## Stack
  
-The stack is used for static memory allocation. Read Wikipedia: https://en.wikipedia.org/wiki/Stack-based_memory_allocation
+The stack is used for static memory allocation. Read Wikipedia: [https://en.wikipedia.org/wiki/Stack-based_memory_allocation](https://en.wikipedia.org/wiki/Stack-based_memory_allocation)
  
 Short explanation:
  
@@ -55,6 +55,7 @@ When the function returns, instead of
  
     pop lr
     ret
+
 (which is supposed to return the value of `lr` and `lcsr` and then do the normal return), it executes
  
     pop pc
