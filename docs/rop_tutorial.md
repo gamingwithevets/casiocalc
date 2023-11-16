@@ -59,6 +59,7 @@ When the function returns, instead of
 (which is supposed to return the value of `lr` and `lcsr` and then do the normal return), it executes
  
     pop pc
+
 .
  
 For more detailed instruction, read the nX/U8 core instruction manual. But basically, the LR (2 bytes) is on the top, then the LCSR (1 byte), then an unused byte.
