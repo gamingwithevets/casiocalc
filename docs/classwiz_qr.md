@@ -335,4 +335,92 @@ Equation mode, of which submode 08 is "Solver", which is new to CW II.
 </thead>
 </table>
 
+Ratio mode
+<table>
+<thead>
+  <tr>
+    <td rowspan="2">4A</td>
+    <td rowspan="2">Ratio</td>
+    <td>01</td>
+    <td>A:B=X:D</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>A:B=C:X</td>
+  </tr>
+</thead>
+</table>
+
+Inequality mode.
+Among them, the submode code is used to refer to the degree of the polynomial equation,
+and the sign of the inequality also needs to be determined using **7~8 digits** in the M data.
+For example, M-**4B04**DD**01**00 means ax²+bx+c<0
+<table>
+<thead>
+  <tr>
+    <td rowspan="12">4B</td>
+    <td rowspan="12">Inequality</td>
+    <td rowspan="4">04</td>
+    <td>00</td>
+    <td>ax²+bx+c&gt;0</td>
+  </tr>
+  <tr>
+    <td>01</td>
+    <td>ax²+bx+c&lt;0</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>ax²+bx+c≥0</td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td>ax²+bx+c≤0</td>
+  </tr>
+  <tr>
+    <td rowspan="4">05</td>
+    <td>00</td>
+    <td>ax³+bx²+cx+d&gt;0</td>
+  </tr>
+  <tr>
+    <td>01</td>
+    <td>ax³+bx²+cx+d&lt;0</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>ax³+bx²+cx+d≥0</td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td>ax³+bx²+cx+d≤0</td>
+  </tr>
+  <tr>
+    <td rowspan="4">06</td>
+    <td>00</td>
+    <td>ax⁴+bx³+cx²+dx+e&gt;0</td>
+  </tr>
+  <tr>
+    <td>01</td>
+    <td>ax⁴+bx³+cx²+dx+e&lt;0</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>ax⁴+bx³+cx²+dx+e≥0</td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td>ax⁴+bx³+cx²+dx+e≤0</td>
+  </tr>
+</thead>
+</table>
+
+### Result area template (5~6)
+Bits 5~6 of the M data are used to indicate the template style displayed in the result area.
+For example, if the result of calculating Rec(r,θ) has two parts x=a, y=b, 11 is used to refer to it.
+
+| 11 | Rec(r,θ) | x=a,y=b
+| 12 | Pol(x,y) | r=a,θ=b
+| 13 | Solve for ?? | ??=a, L-R=b
+| 14 | ÷R | a,R=b
+| 15 | →Simp | F=b,a
+
 \<WIP\>
