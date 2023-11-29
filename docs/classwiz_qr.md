@@ -423,4 +423,385 @@ For example, if the result of calculating Rec(r,θ) has two parts x=a, y=b, 11 i
 | 14 | ÷R | a,R=b
 | 15 | →Simp | F=b,a
 
+Among them, 13 is used in the solution interface of SOLVE. The target variable for solution needs to be referred to by digits 9~10 of the M data, which is the hexadecimal code corresponding to the character of the solution variable.
+For example, if the result is x=a, L-R=b, and it is solved for x, these two digits are 48 (47 in CW II).
+
+For other values, the default is to treat the algebraic form of the complex number a+bi.
+Even if it is temporarily converted to polar coordinate form r∠θ (use →r∠θ in CW I or use the format menu conversion in CW II), it will not be exported and indicated in the M data of QR.
+If the default display is set to polar coordinate format, you need to view the S data.
+
+### Numerical display format (7~8)
+The 7th digit is used to indicate the display format of the result area value, and the 8th digit indicates the format in which it is stored in the variable.
+For example, if 7~8 is AD, the result needs to be displayed as a decimal, but it can be converted into a standard result display.
+
+| 1 | Degrees Minutes Seconds format
+| 2 | Press [ENG] 4 times
+| 3 | Press [ENG] thrice
+| 4 | Press [ENG] twice
+| 5 | Press [ENG] once
+| 6 | Press [SHIFT] [ENG] once
+| 7 | Press [SHIFT] [ENG] twice
+| 8 | Press [SHIFT] [ENG] thrice
+| 9 | Press [SHIFT] [ENG] 4 times
+| A | Decimal
+| B | Improper Fraction
+| C | Mixed Fraction
+| D | Standard
+| E | Recurring Decimal
+| F | Prime Factorization
+
+Among them, for the display of engineering notation, after pressing [ENG] for the first time, the decimal point will try to move to the right until the exponent of ×10 is a multiple of 3.
+If it is already there, it will not move.
+Continue to press [ENG] to continue moving right, up to 4 times.
+[SHIFT][ENG] is the same, but it just moves the decimal point to the left.
+CW II introduced the function of moving the decimal point with the [←][→] keys, and the principle is similar.
+
+### Non-calculation screen
+If the QR is generated in the error interface, mode menu, or setting menu, the first two digits will be the corresponding error or menu code.
+At this time, accessing the link will jump to the corresponding manual page.
+
+| X1 | Calculate mode description | Calculate
+| X2 | Base-N mode description | Base-N
+| X3 | Statistics mode description | Statistics
+| X4 | Complex mode description | Complex
+| X5 | Equation mode description | Equation
+| X6 | Matrix mode description | Matrix
+| X7 | Vector mode description | Vector
+| X8 | Table mode description | Table
+| X9 | Verify mode description | Verify
+| XA | Ratio mode description | Ratio
+| XB | Inequality mode description | Inequality
+| XC | Distribution mode description | Distribution
+| XD | Spreadsheet mode description | Spreadsheet
+| XE | Algorithm mode description | Algorithm
+| XF | Math Box mode description | Math Box
+| Y1 | AC key break | AC Break
+| Y2 | Syntax error | Syntax ERROR
+| Y3 | Math error | Math ERROR
+| Y4 | Range error | Range ERROR
+| Y5 | Cannot simplify | Cannot Simplify
+| Y6 | Circular reference error | Circular ERROR
+| Y7 | Stack error | Stack ERROR
+| Y8 | Argument error | Argument ERROR
+| Y9 | Wrong dimensionality | Dimension ERROR
+| YA | Unexplainable | Cannot Solve
+| YB | Timeout | Time Out
+| YC | Variable error | Variable ERROR
+| YE | Memory error | Memory ERROR
+| YG | No operator | No Operator
+| YH | Undefined | Not Defined
+| YZ | Nesting error | Nesting ERROR<br>(ERREUR branch in French)
+| Z0 | Setting menu | Setup
+| Z1 | Setting (second level) menu | Setup
+
+## S data
+The length of S data is generally 28 characters, and it stores the calculator’s setting data, such as angle units, etc.
+
+The following table shows the setting names corresponding to characters in different positions, and the setting items corresponding to different parameter values.
+<table>
+<thead>
+  <tr>
+    <th>Digit(s)</th>
+    <th>Setting name</th>
+    <th>Parameter value</th>
+    <th>Setting items</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="4">1</td>
+    <td rowspan="4">Number Format(Main)</td>
+    <td>0</td>
+    <td>Norm1</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Norm2</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>FixX</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>SciX</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Number Format(Sub)</td>
+    <td>0~9</td>
+    <td>X in FixX/SciX</td>
+  </tr>
+  <tr>
+    <td rowspan="2">3</td>
+    <td rowspan="2">Decimal Mark</td>
+    <td>0</td>
+    <td>Comma</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Dot</td>
+  </tr>
+  <tr>
+    <td rowspan="3">4</td>
+    <td rowspan="3">Angle Unit</td>
+    <td>4</td>
+    <td>Degree</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Radian</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Gradian</td>
+  </tr>
+  <tr>
+    <td rowspan="2">5</td>
+    <td rowspan="2">Input</td>
+    <td>0</td>
+    <td>LineI</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>MathI</td>
+  </tr>
+  <tr>
+    <td rowspan="2">6</td>
+    <td rowspan="2">Fraction Result</td>
+    <td>0</td>
+    <td>d/c</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>ab/c</td>
+  </tr>
+  <tr>
+    <td rowspan="2">7</td>
+    <td rowspan="2">Coimplex Result</td>
+    <td>0</td>
+    <td>a+bi</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>r∠θ</td>
+  </tr>
+  <tr>
+    <td rowspan="2">8</td>
+    <td rowspan="2">Statistics Frequency</td>
+    <td>0</td>
+    <td>Off</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>On</td>
+  </tr>
+  <tr>
+    <td rowspan="2">9</td>
+    <td rowspan="2">Recurring Decimal</td>
+    <td>0</td>
+    <td>Off</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>On</td>
+  </tr>
+  <tr>
+    <td rowspan="2">10</td>
+    <td rowspan="2">Simplify</td>
+    <td>0</td>
+    <td>Auto</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Manual</td>
+  </tr>
+  <tr>
+    <td rowspan="2">11</td>
+    <td rowspan="2">Output</td>
+    <td>0</td>
+    <td>MathO(LineO)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>DecimalO</td>
+  </tr>
+  <tr>
+    <td rowspan="2">12</td>
+    <td rowspan="2">Auto Power Off</td>
+    <td>0</td>
+    <td>10 Min.</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>60 Min.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">13</td>
+    <td rowspan="3">Table Type</td>
+    <td>0</td>
+    <td>f(x)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>f(x),g(x)</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>g(x)</td>
+  </tr>
+  <tr>
+    <td rowspan="2">14</td>
+    <td rowspan="2">Engineer Symbol</td>
+    <td>0</td>
+    <td>Off</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>On</td>
+  </tr>
+  <tr>
+    <td rowspan="2">15</td>
+    <td rowspan="2">Digit Seperator</td>
+    <td>0</td>
+    <td>Off</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>On</td>
+  </tr>
+  <tr>
+    <td rowspan="2">16</td>
+    <td rowspan="2">Multi-Line Font</td>
+    <td>A</td>
+    <td>Small Font</td>
+  </tr>
+  <tr>
+    <td>E</td>
+    <td>Normal Font</td>
+  </tr>
+  <tr>
+    <td rowspan="2">17</td>
+    <td rowspan="2">Equation Complex Root</td>
+    <td>0</td>
+    <td>Off</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>On</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>Language</td>
+    <td>/</td>
+    <td>Vary on Models</td>
+  </tr>
+  <tr>
+    <td rowspan="2">19</td>
+    <td rowspan="2">Spreadsheet: Auto Calc</td>
+    <td>0</td>
+    <td>Off</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>On</td>
+  </tr>
+  <tr>
+    <td rowspan="2">20</td>
+    <td rowspan="2">Spreadsheet: Show Cell</td>
+    <td>0</td>
+    <td>Formula</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Value</td>
+  </tr>
+  <tr>
+    <td rowspan="2">21</td>
+    <td rowspan="2">QR Code Version</td>
+    <td>B</td>
+    <td>Version 11</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Version 3</td>
+  </tr>
+  <tr>
+    <td rowspan="4">22</td>
+    <td rowspan="4">Algorithm: Background</td>
+    <td>0</td>
+    <td>Axes</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Axes/Grid</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Axes/xy</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td rowspan="2">23</td>
+    <td rowspan="2">Algorithm: Unit Setting</td>
+    <td>0</td>
+    <td>pixels</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>units</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td colspan="3">Unknown</td>
+  </tr>
+  <tr>
+    <td>25~28</td>
+    <td colspan="3">Checksum</td>
+  </tr>
+</tbody>
+</table>
+
+Among them, the input/output settings are jointly determined by the parameter values of digits 5 and 11.
+The last four digits are suspected to be calculated through some algorithm, similar to a check code.
+On some CW I models released earlier, this is used to verify authenticity.
+
+## Internal numerical storage principle
+The calculator internally uses a method similar to BCD code (Binary-Coded Decimal) to store values.
+From ES to CW I series, 10 bytes (i.e. 20 digits) are used to store values.
+CW II uses 14 bytes (28 digits) for storage due to improved accuracy, but there is no fundamental change in the storage methods of the two.
+
+Some data exported from QR, such as <u>R data</u>, also export the values stored in the calculator as hexadecimal, <u>but the format has been changed</u>.
+
+Let’s first take the 10-byte and 20-digit storage method as an example to see how it is stored inside the calculator, and then talk about the similarities and differences between it and the exported data.
+
+---
+
+When the value is 0, all 20 digits are 0.
+If it is not 0, taking $$ 1.23456789112345\times 10^{67} $$ as an example, the value will be stored in the calculator in the following form:  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #FFE828">67</mark><mark style="background-color: #9EBAFD">01</mark>  
+<mark style="background-color: #FFA53C">Area ①</mark>: The first digit is the type flag, which marks the storage type format of the value;  
+<mark style="background-color: #61D156">Area ②</mark>: The 2nd digit to 5th digit from the right is the significant number storage area. You can see that it occupies 15 digits, which corresponds to 15 digits of significant digits;  
+<mark style="background-color: #FFE828">Area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark>: The fourth and third digits from the right and the first and second digits from the right are the sign and exponent digits. For different storage formats, the meanings of the two areas will be slightly different.
+
+The following is an introduction to each storage format.
+
+### Floating point format
+The flag digit (<mark style="background-color: #FFA53C">area ①</mark>) of the floating-point number format is <mark style="background-color: #FFA53C">0</mark>.
+When storing a value, the calculator intercepts 15 significant digits and writes it in scientific notation with only 1 digit in the integer part, and stores it in <mark style="background-color: #61D156">area ②</mark>.
+If the exponent in scientific notation is >0, <mark style="background-color: #FFE828">area ③</mark> stores the exponent directly,
+if the value itself is >0, <mark style="background-color: #9EBAFD">area ④</mark> takes <mark style="background-color: #9EBAFD">01</mark>, otherwise it takes <mark style="background-color: #9EBAFD">06</mark>.
+If the exponent in scientific notation is <0, the inverse of the exponent, i.e., 100-|exponent| is used in <mark style="background-color: #FFE828">area ③</mark>.
+In this case, if the value itself is >0, <mark style="background-color: #9EBAFD">area ④</mark> takes <mark style="background-color: #9EBAFD">00</mark>, otherwise it takes <mark style="background-color: #9EBAFD">05</mark>.
+
+| | <mark style="background-color: #FFE828">Area ③</mark> | <mark style="background-color: #9EBAFD">Area ④</mark>
+|--|--|--
+| Exponent>0, value>0 | Exponent | 01
+| Exponent>0, value<0 | Exponent | 06
+| Exponent<0, value>0 | 100-exponent | 00
+| Exponent<0, value<0 | 100-exponent | 05
+
 \<WIP\>
