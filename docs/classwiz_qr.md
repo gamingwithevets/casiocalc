@@ -5,7 +5,18 @@ layout: default
 
 Original document by happy sheep. Translated by Steveyboi with Google Translate + DeepL Translate
 
+<details open markdown="block">
+<summary>
+    Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # ClassWiz QR Functional Analysis and Internal Data Storage Principles
+{: .no_toc }
+
 Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a function machine.
 Scanning the two-dimensional code jumps to Casio's WES web site, where you can graph function images, histograms, and other charts using exported data, realizing the innovation of a function machine + a handheld machine = a graphing machine.
 
@@ -434,7 +445,7 @@ If the default display is set to polar coordinate format, you need to view the S
 The 7th digit is used to indicate the display format of the result area value, and the 8th digit indicates the format in which it is stored in the variable.
 For example, if 7~8 is AD, the result needs to be displayed as a decimal, but it can be converted into a standard result display.
 
-| 1 | Degrees Minutes Seconds format
+| 1 | Degrees minutes seconds format
 | 2 | Press [ENG] 4 times
 | 3 | Press [ENG] thrice
 | 4 | Press [ENG] twice
@@ -444,11 +455,11 @@ For example, if 7~8 is AD, the result needs to be displayed as a decimal, but it
 | 8 | Press [SHIFT] [ENG] thrice
 | 9 | Press [SHIFT] [ENG] 4 times
 | A | Decimal
-| B | Improper Fraction
-| C | Mixed Fraction
+| B | Improper fraction
+| C | Mixed fraction
 | D | Standard
-| E | Recurring Decimal
-| F | Prime Factorization
+| E | Recurring decimal
+| F | Prime factorization
 
 Among them, for the display of engineering notation, after pressing [ENG] for the first time, the decimal point will try to move to the right until the exponent of ×10 is a multiple of 3.
 If it is already there, it will not move.
@@ -790,7 +801,7 @@ If it is not 0, taking $$ 1.23456789112345\times 10^{67} $$ as an example, the v
 The following is an introduction to each storage format.
 
 ### Floating point format
-The flag digit (<mark style="background-color: #FFA53C">area ①</mark>) of the floating-point number format is <mark style="background-color: #FFA53C">0</mark>.
+The floating point format (<mark style="background-color: #FFA53C">area ①</mark>) flag is <mark style="background-color: #FFA53C">0</mark>.
 When storing a value, the calculator intercepts 15 significant digits and writes it in scientific notation with only 1 digit in the integer part, and stores it in <mark style="background-color: #61D156">area ②</mark>.
 If the exponent in scientific notation is >0, <mark style="background-color: #FFE828">area ③</mark> stores the exponent directly,
 if the value itself is >0, <mark style="background-color: #9EBAFD">area ④</mark> takes <mark style="background-color: #9EBAFD">01</mark>, otherwise it takes <mark style="background-color: #9EBAFD">06</mark>.
@@ -803,5 +814,96 @@ In this case, if the value itself is >0, <mark style="background-color: #9EBAFD"
 | Exponent>0, value<0 | Exponent | 06
 | Exponent<0, value>0 | 100-exponent | 00
 | Exponent<0, value<0 | 100-exponent | 05
+
+Here are some examples to facilitate understanding
+1. Writing 123456789 as $$ 1.23456789000000\times 10^{08} $$, both the number and the exponent part are >0, so it will be stored as  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789000000</mark><mark style="background-color: #FFE828">08</mark><mark style="background-color: #9EBAFD">01</mark>
+2. By intercepting the first 15 significant digits of $$ 0.0000987654321123456789 $$ and write it as $$ 9.87654321123456\times ^{-05} $$, the number is >0, the exponent part is <0, and 100-5=95, then  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">987654321123456</mark><mark style="background-color: #FFE828">95</mark><mark style="background-color: #9EBAFD">00</mark>
+3. $$ −201420202022\times ^{−23} $$, will be written as $$ −2.01420202022000\times ^{−12} $$, the number is <0, the exponent part is also <0, and 100-12=88, then  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">201420202022000</mark><mark style="background-color: #FFE828">88</mark><mark style="background-color: #9EBAFD">05</mark>
+
+### Fraction format
+The fraction format flag is <mark style="background-color: #FFA53C">2</mark>.
+When storing a fraction, if the absolute value of the fraction is <1, the fraction line is represented by A and stored in <mark style="background-color: #61D156">area ②</mark> in the form of <mark style="background-color: #61D156">numerator A fraction</mark>, with 0 padding after less than 15 digits.
+If the absolute value of the fraction is >1, it needs to be converted into a mixed number and then stored in the form of <mark style="background-color: #61D156">integer A numerator A fraction</mark>.
+The 15th bit is also supplemented with 0. This is essentially the same as the linear input representation of the fraction.
+<mark style="background-color: #FFE828">Area ③</mark> is the "length" of the fraction, as explained below with an example.
+<mark style="background-color: #9EBAFD">Area ④</mark> is the symbol of the fraction, 
+if it is a positive number, it will be <mark style="background-color: #9EBAFD">01</mark>, and if it is a negative number, it will be <mark style="background-color: #9EBAFD">06</mark>.
+
+1. $$ \displaystyle\frac{2}{3} $$ is expressed as  
+<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A3</u>000000000000</mark><mark style="background-color: #FFE828">03</mark><mark style="background-color: #9EBAFD">01</mark>
+2. $$ \displaystyle-\frac{2}{300} $$ is expressed as  
+<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A300</u>0000000000</mark><mark style="background-color: #FFE828">05</mark><mark style="background-color: #9EBAFD">06</mark>  
+In the above two examples, underlines are used to mark the length of the fraction. You can see that <mark style="background-color: #61D156">area ②</mark> of both is <mark style="background-color: #61D156">2A3000000000000</mark>,
+but due to the difference in <mark style="background-color: #FFE828">area ③</mark>, the values expressed are different.
+3. $$ \displaystyle\frac{56789}{1234}>1 $$, converted to a mixed fraction $$ \displaystyle 46\frac{25}{1234} $$, then  
+<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>46A25A1234</u>00000</mark><mark style="background-color: #FFE828">10</mark><mark style="background-color: #9EBAFD">01</mark>  
+
+Under normal circumstances, the length of a fraction cannot exceed 10.
+If the operation exceeds 10, it will be converted into a floating point number for storage and cannot be converted back.
+This is also why some fractions that do not seem to exceed the calculation range are still expressed as decimals.
+It is probably because the length of the number is expressed as an improper fraction and is not greater than 10, but the length is expressed as a mixed fraction.
+The degree is over 10. If the value of the corresponding variable in an emulator is modified through an exception or using a memory editor, it can still be displayed.
+
+### Degrees minutes seconds format
+The degrees minutes seconds format flag is <mark style="background-color: #FFA53C">4</mark>.
+
+At this time, it uses the same storage method as floating point numbers, except that the calculator converts it into degrees, minutes and seconds format by default when displaying.
+
+### Radical format
+The radical format flag is <mark style="background-color: #FFA53C">8</mark>.
+The calculator can display the addition of up to two different radical expressions, which can be called radical expression 1 and radical expression 2.
+Each radical expression can have up to 3 digits.
+The coefficient of the radical expression is a fraction.
+The numerator can have up to 2 digits.
+The two fractions can be different, and the two fractions will be displayed when displayed.
+
+For example, there is radical 1: $$ \displaystyle\sqrt{aaa}\times\frac{bb}{cc} $$ and radical 2: $$ \displaystyle\sqrt{ddd}\times\frac{ee}{ff} $$, they will be stored in <mark style="background-color: #61D156">area ②</mark> as  
+<mark style="background-color: #61D156">aaa bb cc 0 ddd ee ff</mark>  
+It occupies exactly 15 bits, and the 0 in the middle can be understood as a separator.
+
+At this time, <mark style="background-color: #FFE828">area ③</mark> is used to indicate the positive and negative sign of radical formula 2, and <mark style="background-color: #9EBAFD">area ④</mark> is used to indicate the positive and negative sign of radical formula 1.
+Similarly, the positive number is 01, and the negative number is 06.
+
+1. $$ \displaystyle -\frac{12\sqrt{345}}{67} + \frac{78\sqrt{777}}{89} $$ will be stored as  
+<mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u></mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>
+2. $$ \displaystyle\sqrt{3} $$ can be written as $$ \displaystyle\sqrt{000}\times\frac{00}{01}+\sqrt{003}\times\frac{01}{01} $$, then  
+<mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>000</u>00<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #FFE828">00</mark><mark style="background-color: #9EBAFD">01</mark>
+3. $$ \displaystyle 2-\frac{\sqrt{7}}{2} $$ can be written as $$ \displaystyle \sqrt{001}\times\frac{02}{01}-\sqrt{007}\times\frac{01}{02} $$, then  
+<mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>007</u>01<u>02</u></mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #9EBAFD">01</mark>
+
+For example 1 above, when the calculator displays the result, it will be divided into $$ \displaystyle\frac{5226\sqrt{777}-1068\sqrt{345}}{5963} $$ for display, but if this formula is entered into the input area for calculation,
+it will exceed the limit of the radical format, and the result will be converted and stored as floating point format.
+
+### ERROR value
+The error value flag is <mark style="background-color: #FFA53C">F</mark>.
+Normally no ERROR value is stored in the variable, to create an ERROR value, there is the TABLE method in ES PLUS, and in CW I, you can type the following equation, and then press [CALC][=][=], M will light up, [AC].
+Check the value of M is empty. Recall M directly to get a math error. Looking at the memory, the memory area where M is located begins with F3, and in the analysis of the M data described above, Y3 corresponds to a math error.
+
+![2 Casio CW I calculator screen captures. One is showing the equation M:M=Integral(1, ×10^85-*10^99, 9×10^99), the other shows the variable menu with an empty value in M.](/casiocalc/images/classwiz_qr_5.png)
+	
+If you enter $$ =\div $$ in Table mode, a cell with syntax error will be created, and after exporting with QR, the value stored in that cell (how to check it will be explained later) starts with F2, which happens to be the syntax error corresponding to Y2 in the M data.
+
+In other words, although all values starting with F are ERROR values, they are also reserved.
+
+### Others
+In fact, the internal storage will also have data with flag digit 6, which is equivalent to a pointer to a matrix or vector.
+Since QR directly derives the values stored in the matrix, it will not be described here.
+
+### Numerical representation of CW II
+CW II increases the precision to 23 digits and uses 14 bytes and 28 digits to store floating point numbers, but the representation method does not fundamentally change.
+The last 4 digits are also used to store <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark>.
+The floating point number format needs to occupy the middle 23-bit <mark style="background-color: #61D156">area ②</mark>, and the remaining numerical formats are padded with 0s.
+
+1. $$ \displaystyle 9.0000000000000000075528 $$ is represented as  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">90000000000000000075528</mark><mark style="background-color: #FFE828">00</mark><mark style="background-color: #9EBAFD">01</mark>
+2. $$ \displaystyle \frac{570}{991} $$ as  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156"><u>570A991</u>0000000000000000</mark><mark style="background-color: #FFE828">07</mark><mark style="background-color: #9EBAFD">01</mark>  
+The length of the fraction still cannot exceed 10
+3. $$ \displaystyle -\frac{12\sqrt{345}}{67}+\frac{78\sqrt{777}}{89} $$ as  
+<mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u>00000000</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>  
+8 zeroes are padded in <mark style="background-color: #61D156">area ②</mark>
 
 \<WIP\>
