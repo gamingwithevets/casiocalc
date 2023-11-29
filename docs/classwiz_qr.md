@@ -80,7 +80,7 @@ After analyzing the data, the following is a preliminary explanation of the diff
 | U | Unique | The serial number displayed during self-test
 | M | Mode | Data such as mode codes, calculation result display methods, etc. stored to indicate how to decode other data
 | S | Setting | Stores data such as calculator setting parameters
-| R | Result | The result area data generally consists of two parts, each part is 20 in length
+| R | Result | The result area data, generally consists of two parts, each part is 20 in length
 | E | Expression | Generally encoded computational expressions, in algorithm mode it is the created algorithm
 | T | Tabulation | Spreadsheet data in Spreadsheet mode, or list data in Statistics, Distribution, Math Box, etc. modes
 | C | Chart | Specifically for storing matrix/vector data, also used in Equation mode
@@ -589,7 +589,7 @@ The following table shows the setting names corresponding to characters in diffe
   </tr>
   <tr>
     <td rowspan="2">7</td>
-    <td rowspan="2">Coimplex Result</td>
+    <td rowspan="2">Complex Result</td>
     <td>0</td>
     <td>a+bi</td>
   </tr>
