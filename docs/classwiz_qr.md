@@ -906,4 +906,26 @@ The length of the fraction still cannot exceed 10
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u>00000000</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>  
 8 zeroes are padded in <mark style="background-color: #61D156">area ②</mark>
 
+## R data
+Now that the storage principle of internal values has been introduced, let’s take a look at how the QR function exports these values.
+
+Different from the internal storage method, the R data exported by QR will swap the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark>.
+
+### Calculate, Complex modes
+When R data is exported on the screen of ordinary calculation results, it needs to be divided into two parts, each of which has 20 digits, which corresponds to the 20 digits of the internal storage method.
+
+If the calculation result is relatively "simple", such as the result of a numerical operation, the second part of the R data is all 0, and only the first part (the first 20 digits) is useful, and can be parsed according to the storage method described above (the positions of area ③ and area ④ need to be swapped).
+
+If the calculation result is relatively "complicated" and the calculator uses two parts for display, such as the Pol and Rec coordinate operations, the ÷R remainder operation, the result of an imaginary number in Complex mode, etc., it is necessary to parse the two parts of the R data and determine the method for displaying the two values according to the corresponding parameters in the M data.
+
+1. After exporting the calculation result $$ \displaystyle 1.23456789112345\times 10^{67} $$, the R data will be  
+<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">67</mark>00000000000000000000  
+Please note that the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> have been reversed.
+2. The result of calculating $$ \displaystyle \textrm{Pol(1, −1)} $$ is $$ \displaystyle r = \sqrt{2},\theta = −45 $$, which is derived as  
+<mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>000</u>00<u>01</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">00</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">450000000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">01</mark>  
+3. $$ \displaystyle \frac{5}{7} - \sqrt{2} + \sqrt{3}i + 2i $$, at this time the first part is the real part and the last part is the imaginary part  
+<mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>05<u>07</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">01</mark>
+
+In addition to ordinary calculations, when calculations involving equations, inequalities, matrices, vectors, and other calculations contain multiple results, there will be a storage flag for this data at the beginning of the R data, followed by numerical value parts, each of which is also 20 bits, and the results corresponding to the numerical values of each part will be decided based on the M data and the storage flag at the beginning of the R data.
+
 \<WIP\>
