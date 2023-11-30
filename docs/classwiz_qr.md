@@ -171,8 +171,8 @@ Character tables may vary slightly from model to model, for example, European mo
 | 026 | fx-350CN CW | 0
 | 027 | fx-991CN CW | 0
 | 028 | fx-999CN CW | 0
-| 029 | fx-JP500CW | 1
-| 030 | fx-JP700CW | 1
+| 029 | fx-JP500CW | 0
+| 030 | fx-JP700CW | 0
 | 031 | fx-JP900CW | 1
 | 032 | fx-550AZ | 1
 | 036 | fx-82LA CW | 1
