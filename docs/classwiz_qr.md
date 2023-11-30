@@ -832,13 +832,13 @@ The 15th bit is also supplemented with 0. This is essentially the same as the li
 <mark style="background-color: #9EBAFD">Area ④</mark> is the symbol of the fraction, 
 if it is a positive number, it will be <mark style="background-color: #9EBAFD">01</mark>, and if it is a negative number, it will be <mark style="background-color: #9EBAFD">06</mark>.
 
-1. $$ \displaystyle\frac{2}{3} $$ is expressed as  
+1. $$ \frac{2}{3} $$ is expressed as  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A3</u>000000000000</mark><mark style="background-color: #FFE828">03</mark><mark style="background-color: #9EBAFD">01</mark>
-2. $$ \displaystyle-\frac{2}{300} $$ is expressed as  
+2. $$ -\frac{2}{300} $$ is expressed as  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A300</u>0000000000</mark><mark style="background-color: #FFE828">05</mark><mark style="background-color: #9EBAFD">06</mark>  
 In the above two examples, underlines are used to mark the length of the fraction. You can see that <mark style="background-color: #61D156">area ②</mark> of both is <mark style="background-color: #61D156">2A3000000000000</mark>,
 but due to the difference in <mark style="background-color: #FFE828">area ③</mark>, the values expressed are different.
-3. $$ \displaystyle\frac{56789}{1234}>1 $$, converted to a mixed fraction $$ \displaystyle 46\frac{25}{1234} $$, then  
+3. $$ \frac{56789}{1234}>1 $$, converted to a mixed fraction $$ 46\frac{25}{1234} $$, then  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>46A25A1234</u>00000</mark><mark style="background-color: #FFE828">10</mark><mark style="background-color: #9EBAFD">01</mark>  
 
 Under normal circumstances, the length of a fraction cannot exceed 10.
@@ -860,21 +860,21 @@ The coefficient of the radical expression is a fraction.
 The numerator can have up to 2 digits.
 The two fractions can be different, and the two fractions will be displayed when displayed.
 
-For example, there is radical 1: $$ \displaystyle\sqrt{aaa}\times\frac{bb}{cc} $$ and radical 2: $$ \displaystyle\sqrt{ddd}\times\frac{ee}{ff} $$, they will be stored in <mark style="background-color: #61D156">area ②</mark> as  
+For example, there is radical 1: $$ \sqrt{aaa}\times\frac{bb}{cc} $$ and radical 2: $$ \sqrt{ddd}\times\frac{ee}{ff} $$, they will be stored in <mark style="background-color: #61D156">area ②</mark> as  
 <mark style="background-color: #61D156">aaa bb cc 0 ddd ee ff</mark>  
 It occupies exactly 15 bits, and the 0 in the middle can be understood as a separator.
 
 At this time, <mark style="background-color: #FFE828">area ③</mark> is used to indicate the positive and negative sign of radical formula 2, and <mark style="background-color: #9EBAFD">area ④</mark> is used to indicate the positive and negative sign of radical formula 1.
 Similarly, the positive number is 01, and the negative number is 06.
 
-1. $$ \displaystyle -\frac{12\sqrt{345}}{67} + \frac{78\sqrt{777}}{89} $$ will be stored as  
+1. $$ -\frac{12\sqrt{345}}{67} + \frac{78\sqrt{777}}{89} $$ will be stored as  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u></mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>
-2. $$ \displaystyle\sqrt{3} $$ can be written as $$ \displaystyle\sqrt{000}\times\frac{00}{01}+\sqrt{003}\times\frac{01}{01} $$, then  
+2. $$ \sqrt{3} $$ can be written as $$ \sqrt{000}\times\frac{00}{01}+\sqrt{003}\times\frac{01}{01} $$, then  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>000</u>00<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #FFE828">00</mark><mark style="background-color: #9EBAFD">01</mark>
-3. $$ \displaystyle 2-\frac{\sqrt{7}}{2} $$ can be written as $$ \displaystyle \sqrt{001}\times\frac{02}{01}-\sqrt{007}\times\frac{01}{02} $$, then  
+3. $$ 2-\frac{\sqrt{7}}{2} $$ can be written as $$ \sqrt{001}\times\frac{02}{01}-\sqrt{007}\times\frac{01}{02} $$, then  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>007</u>01<u>02</u></mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #9EBAFD">01</mark>
 
-For example 1 above, when the calculator displays the result, it will be divided into $$ \displaystyle\frac{5226\sqrt{777}-1068\sqrt{345}}{5963} $$ for display, but if this formula is entered into the input area for calculation,
+For example 1 above, when the calculator displays the result, it will be divided into $$ \frac{5226\sqrt{777}-1068\sqrt{345}}{5963} $$ for display, but if this formula is entered into the input area for calculation,
 it will exceed the limit of the radical format, and the result will be converted and stored as floating point format.
 
 ### ERROR value
@@ -897,12 +897,12 @@ CW II increases the precision to 23 digits and uses 14 bytes and 28 digits to st
 The last 4 digits are also used to store <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark>.
 The floating point number format needs to occupy the middle 23-bit <mark style="background-color: #61D156">area ②</mark>, and the remaining numerical formats are padded with 0s.
 
-1. $$ \displaystyle 9.0000000000000000075528 $$ is represented as  
+1. $$ 9.0000000000000000075528 $$ is represented as  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">90000000000000000075528</mark><mark style="background-color: #FFE828">00</mark><mark style="background-color: #9EBAFD">01</mark>
-2. $$ \displaystyle \frac{570}{991} $$ as  
+2. $$ \frac{570}{991} $$ as  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156"><u>570A991</u>0000000000000000</mark><mark style="background-color: #FFE828">07</mark><mark style="background-color: #9EBAFD">01</mark>  
 The length of the fraction still cannot exceed 10
-3. $$ \displaystyle -\frac{12\sqrt{345}}{67}+\frac{78\sqrt{777}}{89} $$ as  
+3. $$ -\frac{12\sqrt{345}}{67}+\frac{78\sqrt{777}}{89} $$ as  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u>00000000</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>  
 8 zeroes are padded in <mark style="background-color: #61D156">area ②</mark>
 
@@ -918,16 +918,87 @@ If the calculation result is relatively "simple", such as the result of a numeri
 
 If the calculation result is relatively "complicated" and the calculator uses two parts for display, such as the Pol and Rec coordinate operations, the ÷R remainder operation, the result of an imaginary number in Complex mode, etc., it is necessary to parse the two parts of the R data and determine the method for displaying the two values according to the corresponding parameters in the M data.
 
-1. After exporting the calculation result $$ \displaystyle 1.23456789112345\times 10^{67} $$, the R data will be  
+1. After exporting the calculation result $$ 1.23456789112345\times 10^{67} $$, the R data will be  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">67</mark>00000000000000000000  
 Please note that the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> have been reversed.
-2. The result of calculating $$ \displaystyle \textrm{Pol(1, −1)} $$ is $$ \displaystyle r = \sqrt{2},\theta = −45 $$, which is derived as  
+2. The result of calculating $$ \textrm{Pol(1, −1)} $$ is $$ r = \sqrt{2},\theta = −45 $$, which is derived as  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>000</u>00<u>01</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">00</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">450000000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">01</mark>  
-3. $$ \displaystyle \frac{5}{7} - \sqrt{2} + \sqrt{3}i + 2i $$, at this time the first part is the real part and the last part is the imaginary part  
+3. $$ \frac{5}{7} - \sqrt{2} + \sqrt{3}i + 2i $$, at this time the first part is the real part and the last part is the imaginary part  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>05<u>07</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">01</mark>
 
 In addition to ordinary calculations, when calculations involving equations, inequalities, matrices, vectors, and other calculations contain multiple results, there will be a storage flag for this data at the beginning of the R data, followed by numerical value parts, each of which is also 20 bits, and the results corresponding to the numerical values of each part will be decided based on the M data and the storage flag at the beginning of the R data.
 
+### Equation mode
+For example, when solving a certain linear equation, we get $$ x = -\frac{9}{7}, y = \frac{15}{7} $$. At this time, the R data is (newlines have been added to improve readability)  
+&emsp;EQ0  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">1A2A70000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">05</mark>  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">2A1A70000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">05</mark>
 
+EQ indicates the result in Equation mode, and EQ0 indicates that the equation has a solution. If it is EQ1, it is "Infinite Solution"; EQ2 is "No Solution"; EQ4 is "No Real Roots";
+if a model is able to find the minimum and maximum values of its corresponding function when solving a cubic equation, it will start with EQ5, or EQ0 if it is not supported.
+
+### Matrix, Vector
+If in matrix mode, the calculation result is a matrix
+$$
+\begin{bmatrix}
+0 & 1.41421356237309 & 1.23456789112345\times 10^{67} \\
+−4.56987123\times 10^{-6} & \frac{1}{7} & -\frac{8}{9} \\
+\end{bmatrix}
+$$  
+The R data will be  
+&emsp;MT23  
+&emsp;<mark style="background-color: #E4E5E8">00000000000000000000</mark>  
+&emsp;<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">141421356237309</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">00</mark>  
+&emsp;<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">67</mark>  
+&emsp;<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">456987123000000</mark><mark style="background-color: #9EBAFD">05</mark><mark style="background-color: #FFE828">94</mark>  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">1A7000000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">03</mark>  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">8A9000000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">03</mark>
+
+The M at the beginning means Matrix; MT means MatAns. 2 and 3 indicate that the matrix is 2×3 in size. The following values are the values from left to right and top to bottom of the matrix.
+
+Similarly, if it is a vector result, it starts with VT, that is, VctAns, but for two- and three-dimensional vectors, VT02 and VT03 will be used instead of VT12 and VT13.
+
+### Inequality
+In Inequality mode, there are similar expressions:
+
+| Prefix | Meaning
+|--|--
+| IN01 | All Real Numbers
+| IN02 | No Solution
+| IN03 | $$ x=a $$
+| IN04 | $$ x\neq a $$
+| IN05 | $$ x<a $$
+| IN06 | $$ x\leq a $$
+| IN07 | $$ a<x $$
+| IN08 | $$ a\leq x $$
+| IN09 | $$ a<x<b $$
+| IN0A | $$ a\leq x\leq b $$
+| IN0B | $$ x<a, b<x $$
+| IN0C | $$ x\leq a, b\leq x $$
+| IN0D | $$ x=a, b\leq x $$
+| IN0E | $$ x\neq a\mathrm{\ and\ }x<b $$
+| IN0F | $$ x\leq a, x=b $$
+| IN10 | $$ a<x\mathrm{\ and\ }x\neq b $$
+| IN11 | $$ a<x<b,c<x $$
+| IN12 | $$ a\leq x\leq b,c\leq x $$
+| IN13 | $$ x<a,b<x<c $$
+| IN14 | $$ x\leq a,b\leq x\leq c $$
+| IN15 | $$ x\neq a\mathrm{\ and\ }x\neq b$$
+| IN16 | $$ x=a,x=b $$
+| IN17 | $$ x\neq a\mathrm{\ and\ }x<b,c<x $$
+| IN18 | $$ x=a,b\leq x\leq c $$
+| IN19 | $$ a<x<c\mathrm{\ and\ }x\neq b $$
+| IN1A | $$ x\leq a,x=b,c\leq x $$
+| IN1B | $$ x<a,b<x\mathrm{\ and\ }x\neq c $$
+| IN1C | $$ a\leq x\leq b,x=c $$
+| IN1D | $$ a<x<b,c<x<d $$
+| IN1E | $$ x<a,b<x<c,d<x $$
+| IN1F | $$ a\leq x\leq b, c\leq x\leq d $$
+| IN20 | $$ x\leq a,b\leq x\leq c,d\leq x $$
+
+At this time, the R data starts with INxx, and is followed by each value in the order of corresponding $$ abcd $$.
+
+### Verify mode
+The R data in verification mode has only 20 bits, representing a value, "True" is 1, "False" is 0.
 
 \<WIP\>
