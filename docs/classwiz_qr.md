@@ -18,7 +18,7 @@ Original document by happy sheep. Translated by Steveyboi with Google Translate 
 {: .no_toc }
 
 Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a function machine.
-Scanning the two-dimensional code jumps to Casio's WES web site, where you can graph function images, histograms, and other charts using exported data, realizing the innovation of a function machine + a handheld machine = a graphing machine.
+Scanning the two-dimensional code jumps to Casio's WES web site, where you can graph function images, histograms, and other charts using exported data, realizing the innovation of a scientific calculator + a handheld device = a graphing calculator.
 
 The QR feature was initially only available on ClassWiz flagship models, and was subsequently extended to non-flagship models, but domestic models have never had access to the feature.
 As a result, not much has been done to analyze this feature in China, and it has only been covered in some ClassWiz review posts.
@@ -471,39 +471,39 @@ CW II introduced the function of moving the decimal point with the [←][→] ke
 If the QR is generated in the error interface, mode menu, or setting menu, the first two digits will be the corresponding error or menu code.
 At this time, accessing the link will jump to the corresponding manual page.
 
-| X1 | Calculate mode description | Calculate
-| X2 | Base-N mode description | Base-N
-| X3 | Statistics mode description | Statistics
-| X4 | Complex mode description | Complex
-| X5 | Equation mode description | Equation
-| X6 | Matrix mode description | Matrix
-| X7 | Vector mode description | Vector
-| X8 | Table mode description | Table
-| X9 | Verify mode description | Verify
-| XA | Ratio mode description | Ratio
-| XB | Inequality mode description | Inequality
-| XC | Distribution mode description | Distribution
-| XD | Spreadsheet mode description | Spreadsheet
-| XE | Algorithm mode description | Algorithm
-| XF | Math Box mode description | Math Box
-| Y1 | AC key break | AC Break
-| Y2 | Syntax error | Syntax ERROR
-| Y3 | Math error | Math ERROR
-| Y4 | Range error | Range ERROR
-| Y5 | Cannot simplify | Cannot Simplify
-| Y6 | Circular reference error | Circular ERROR
-| Y7 | Stack error | Stack ERROR
-| Y8 | Argument error | Argument ERROR
-| Y9 | Wrong dimensionality | Dimension ERROR
-| YA | Unexplainable | Cannot Solve
-| YB | Timeout | Time Out
-| YC | Variable error | Variable ERROR
-| YE | Memory error | Memory ERROR
-| YG | No operator | No Operator
-| YH | Undefined | Not Defined
-| YZ | Nesting error | Nesting ERROR<br>(ERREUR branch in French)
-| Z0 | Setting menu | Setup
-| Z1 | Setting (second level) menu | Setup
+| X1 | Calculate
+| X2 | Base-N
+| X3 | Statistics
+| X4 | Complex
+| X5 | Equation
+| X6 | Matrix
+| X7 | Vector
+| X8 | Table
+| X9 | Verify
+| XA | Ratio
+| XB | Inequality
+| XC | Distribution
+| XD | Spreadsheet
+| XE | Algorithm
+| XF | Math Box
+| Y1 | AC Break
+| Y2 | Syntax ERROR
+| Y3 | Math ERROR
+| Y4 | Range ERROR
+| Y5 | Cannot Simplify
+| Y6 | Circular ERROR
+| Y7 | Stack ERROR
+| Y8 | Argument ERROR
+| Y9 | Dimension ERROR
+| YA | Cannot Solve
+| YB | Time Out
+| YC | Variable ERROR
+| YE | Memory ERROR
+| YG | No Operator
+| YH | Not Defined
+| YZ | Nesting ERROR<br>(ERREUR branch in French)
+| Z0 | Setup
+| Z1 | Setup (2nd level)
 
 ## S data
 The length of S data is generally 28 characters, and it stores the calculator’s setting data, such as angle units, etc.
@@ -927,5 +927,7 @@ Please note that the positions of <mark style="background-color: #FFE828">area �
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>05<u>07</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">01</mark>
 
 In addition to ordinary calculations, when calculations involving equations, inequalities, matrices, vectors, and other calculations contain multiple results, there will be a storage flag for this data at the beginning of the R data, followed by numerical value parts, each of which is also 20 bits, and the results corresponding to the numerical values of each part will be decided based on the M data and the storage flag at the beginning of the R data.
+
+
 
 \<WIP\>
