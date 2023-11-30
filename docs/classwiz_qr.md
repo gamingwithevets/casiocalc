@@ -1113,6 +1113,59 @@ Currently, ClassWiz has 14 natural writing symbol templates. Among them, recurri
 | $$ \log{XX}{YY} $$ | 7D 1A XX 1C YY 1B
 | $$ \frac{XX}{YY} $$ | C8 1D 1A XX 1B 1A YY 1B 1E 
 | $$ \Box ^{XX} $$ | $$ \Box $$ C9 1A XX 1B
-| $$ \sqrt[XX]{YY} $$ | CA 1D 1A XX 1B 1A YY 1B 1E 
+| $$ \sqrt[XX]{YY} $$ | CA 1D 1A XX 1B 1A YY 1B 1E
 
-\<WIP\>
+XX, YY, and ZZ in the template symbols in the above table correspond to the corresponding positions of the source code in sequence and can be nested.
+In the source code, 1A, 1B, 1D, and 1E can be seen as pairs of brackets `()`; 1C is similar to a comma, or `),(`; 1F is special and is only used with 18, a mixed number. 
+
+## Algorithm command storage principle
+In algorithm mode, characters with the high byte F9 are used to store commands.
+
+TI-Planet has compiled a mapping of the characters and corresponding commands used by fx-92+ Spéciale Collège: (added English text for fx-92B Secondaire)
+```
+F901 : end of line
+F902 : end of program
+F903 : nop / empty line
+F905 ... 00 : Avancer de ... (Move)
+F906 ... 00 : Tourner de  ... (Turn)
+F907 ... 00 : S'orienter à ... (Direction)
+F908 ... 00 ... 00 : Aller à x=... ; y=... (Go to x,y)
+F909 : Stylo écrit (Pen Down)
+F90A : Stylo relevé (Pen Up)
+F90B ... 00 ... 00 : ... → ... (mettre var à/Set Variable to)
+F90C ... 00 : ? → ... (Demander valeur/Ask and assign)
+F90D3100 : "Oui" (Yes)
+F90D3200 : "Non" (No)
+F90D3300 : "Nombre?" (Number?)
+F90D3400 : "Résultat:" (Result :)
+F90E ... 00 : Afficher résult ... (Show Result)
+F90F3100 : Style Flèche (Arrow Style)
+F90F3200 : Style Croix (Cross Style)
+F910 : Attendre (Wait)
+F911 ... 00 : Répéter ... (Repeat)
+F912 : ⤴ (end of Répéter/Repeat)
+F913 ... 00 : Répéter jusqu'à ... (Repeat Until)
+F914 : ⤴ (end of Répéter jusqu'à/Repeat Until)
+F915 ... 00 : Si ... Alors [... Fin] (If ... Then [... End])
+F916 : Fin (End) (end of Si/Alors / If/Then)
+F917 ... 00 : Si ... Alors [... Sinon ... Fin] (If ... Then [... Else ... End])
+F918 : Sinon (Else)
+F919 : Fin (End) (end of Si/Alors/Sinon / If/Then/Else)
+```
+
+The editable area in the command stores the expression as it is entered, and uses 00 as the terminator for data input in a single command.
+
+The command data is not stored in the input area (the first buffer), but in a place relatively behind the memory area.
+
+## E data, G data
+In modes other than algorithm, the exported E data is the hexadecimal digits of the characters in the current input area and is exported as is without any change.
+
+In algorithm mode, the source code of the command is exported to the E data as is.
+
+G data is the expression of g(x) derived in Table mode.
+
+## References
+1. 【991+boring tutorial】Set Ans=2/0, and the principle can be retained after booting. [https://tieba.baidu.com/p/1899977141](https://tieba.baidu.com/p/1899977141)
+2. 【Technology】Research on internal numerical storage. [https://tieba.baidu.com/p/2793407170](https://tieba.baidu.com/p/2793407170)
+3. 【ClassWiz Joint Test】Comparison of Casio flagship models 991CNX/JP900/991DEX/991SPX. [https://tieba.baidu.com/p/3894270548](https://tieba.baidu.com/p/3894270548)
+4. Classwiz/fx-92+SC tokens encoding. [https://tiplanet.org/forum/viewtopic.php?f=27&t=21662](https://tiplanet.org/forum/viewtopic.php?f=27&t=21662)
