@@ -17,7 +17,7 @@ Original document by happy sheep. Translated by Steveyboi with Google Translate 
 # ClassWiz QR Functional Analysis and Internal Data Storage Principles
 {: .no_toc }
 
-Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a function machine.
+Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a scientific calculator.
 Scanning the two-dimensional code jumps to Casio's WES web site, where you can graph function images, histograms, and other charts using exported data, realizing the innovation of a scientific calculator + a handheld device = a graphing calculator.
 
 The QR feature was initially only available on ClassWiz flagship models, and was subsequently extended to non-flagship models, but domestic models have never had access to the feature.
@@ -81,7 +81,7 @@ After analyzing the data, the following is a preliminary explanation of the diff
 | M | Mode | Data such as mode codes, calculation result display methods, etc. stored to indicate how to decode other data
 | S | Setting | Stores data such as calculator setting parameters
 | R | Result | The result area data, generally consists of two parts, each part is 20 in length
-| E | Expression | Generally encoded computational expressions, in algorithm mode it is the created algorithm
+| E | Expression | Generally encoded computational expressions, in Algorithm mode it is the created algorithm
 | T | Tabulation | Spreadsheet data in Spreadsheet mode, or list data in Statistics, Distribution, Math Box, etc. modes
 | C | Chart | Specifically for storing matrix/vector data, also used in Equation mode
 | G | g(x) | Expression of g(x) in Table mode
