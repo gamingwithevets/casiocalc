@@ -14,7 +14,7 @@ Original document by happy sheep. Translated by Steveyboi with Google Translate 
 {:toc}
 </details>
 
-# ClassWiz QR Functional Analysis and Internal Data Storage Principles
+# ClassWiz QR Function Analysis and Internal Data Storage Principle
 {: .no_toc }
 
 Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a scientific calculator.
