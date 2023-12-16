@@ -1116,7 +1116,7 @@ Currently, ClassWiz has 14 natural writing symbol templates. Among them, recurri
 | $$ \sqrt[XX]{YY} $$ | CA 1D 1A XX 1B 1A YY 1B 1E
 
 XX, YY, and ZZ in the template symbols in the above table correspond to the corresponding positions of the source code in sequence and can be nested.
-In the source code, 1A, 1B, 1D, and 1E can be seen as pairs of brackets `()`; 1C is similar to a comma, or `),(`; 1F is special and is only used with 18, a mixed number. 
+In the source code, 1A, 1B, 1D, and 1E can be seen as pairs of brackets `()`; 1C is similar to a comma, or `),(`; 1F is special and is only used with 18, a mixed fraction. 
 
 ## Algorithm command storage principle
 In algorithm mode, characters with the high byte F9 are used to store commands.
