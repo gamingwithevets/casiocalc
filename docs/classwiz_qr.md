@@ -1110,7 +1110,7 @@ Currently, ClassWiz has 14 natural writing symbol templates. Among them, recurri
 | $$ e^{XX} $$ | 72 1A XX 1B
 | $$ 10^{XX} $$ | 73 1A XX 1B
 | $$ \sqrt{XX} $$ | 74 1A XX 1B
-| $$ \log{XX}{YY} $$ | 7D 1A XX 1C YY 1B
+| $$ \log_{XX}(YY) $$ | 7D 1A XX 1C YY 1B
 | $$ \frac{XX}{YY} $$ | C8 1D 1A XX 1B 1A YY 1B 1E 
 | $$ \Box ^{XX} $$ | $$ \Box $$ C9 1A XX 1B
 | $$ \sqrt[XX]{YY} $$ | CA 1D 1A XX 1B 1A YY 1B 1E
