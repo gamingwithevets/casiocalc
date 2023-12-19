@@ -17,8 +17,8 @@ Original document by happy sheep. Translated by Steveyboi with Google Translate 
 # ClassWiz QR Functional Analysis and Internal Data Storage Principles
 {: .no_toc }
 
-Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a function machine.
-Scanning the two-dimensional code jumps to Casio's WES web site, where you can graph function images, histograms, and other charts using exported data, realizing the innovation of a function machine + a handheld machine = a graphing machine.
+Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a scientific calculator.
+Scanning the two-dimensional code jumps to Casio's WES web site, where you can graph function images, histograms, and other charts using exported data, realizing the innovation of a scientific calculator + a handheld device = a graphing calculator.
 
 The QR feature was initially only available on ClassWiz flagship models, and was subsequently extended to non-flagship models, but domestic models have never had access to the feature.
 As a result, not much has been done to analyze this feature in China, and it has only been covered in some ClassWiz review posts.
