@@ -14,7 +14,7 @@ Original document by happy sheep. Translated by Steveyboi with Google Translate 
 {:toc}
 </details>
 
-# ClassWiz QR Functional Analysis and Internal Data Storage Principles
+# ClassWiz QR Function Analysis and Internal Data Storage Principle
 {: .no_toc }
 
 Casio launched the ClassWiz series of calculators in 2014, which for the first time implemented a QR code (two-dimensional code) display on a scientific calculator.
@@ -81,7 +81,7 @@ After analyzing the data, the following is a preliminary explanation of the diff
 | M | Mode | Data such as mode codes, calculation result display methods, etc. stored to indicate how to decode other data
 | S | Setting | Stores data such as calculator setting parameters
 | R | Result | The result area data, generally consists of two parts, each part is 20 in length
-| E | Expression | Generally encoded computational expressions, in algorithm mode it is the created algorithm
+| E | Expression | Generally encoded computational expressions, in Algorithm mode it is the created algorithm
 | T | Tabulation | Spreadsheet data in Spreadsheet mode, or list data in Statistics, Distribution, Math Box, etc. modes
 | C | Chart | Specifically for storing matrix/vector data, also used in Equation mode
 | G | g(x) | Expression of g(x) in Table mode
@@ -171,8 +171,8 @@ Character tables may vary slightly from model to model, for example, European mo
 | 026 | fx-350CN CW | 0
 | 027 | fx-991CN CW | 0
 | 028 | fx-999CN CW | 0
-| 029 | fx-JP500CW | 1
-| 030 | fx-JP700CW | 1
+| 029 | fx-JP500CW | 0
+| 030 | fx-JP700CW | 0
 | 031 | fx-JP900CW | 1
 | 032 | fx-550AZ | 1
 | 036 | fx-82LA CW | 1
@@ -471,39 +471,39 @@ CW II introduced the function of moving the decimal point with the [←][→] ke
 If the QR is generated in the error interface, mode menu, or setting menu, the first two digits will be the corresponding error or menu code.
 At this time, accessing the link will jump to the corresponding manual page.
 
-| X1 | Calculate mode description | Calculate
-| X2 | Base-N mode description | Base-N
-| X3 | Statistics mode description | Statistics
-| X4 | Complex mode description | Complex
-| X5 | Equation mode description | Equation
-| X6 | Matrix mode description | Matrix
-| X7 | Vector mode description | Vector
-| X8 | Table mode description | Table
-| X9 | Verify mode description | Verify
-| XA | Ratio mode description | Ratio
-| XB | Inequality mode description | Inequality
-| XC | Distribution mode description | Distribution
-| XD | Spreadsheet mode description | Spreadsheet
-| XE | Algorithm mode description | Algorithm
-| XF | Math Box mode description | Math Box
-| Y1 | AC key break | AC Break
-| Y2 | Syntax error | Syntax ERROR
-| Y3 | Math error | Math ERROR
-| Y4 | Range error | Range ERROR
-| Y5 | Cannot simplify | Cannot Simplify
-| Y6 | Circular reference error | Circular ERROR
-| Y7 | Stack error | Stack ERROR
-| Y8 | Argument error | Argument ERROR
-| Y9 | Wrong dimensionality | Dimension ERROR
-| YA | Unexplainable | Cannot Solve
-| YB | Timeout | Time Out
-| YC | Variable error | Variable ERROR
-| YE | Memory error | Memory ERROR
-| YG | No operator | No Operator
-| YH | Undefined | Not Defined
-| YZ | Nesting error | Nesting ERROR<br>(ERREUR branch in French)
-| Z0 | Setting menu | Setup
-| Z1 | Setting (second level) menu | Setup
+| X1 | Calculate
+| X2 | Base-N
+| X3 | Statistics
+| X4 | Complex
+| X5 | Equation
+| X6 | Matrix
+| X7 | Vector
+| X8 | Table
+| X9 | Verify
+| XA | Ratio
+| XB | Inequality
+| XC | Distribution
+| XD | Spreadsheet
+| XE | Algorithm
+| XF | Math Box
+| Y1 | AC Break
+| Y2 | Syntax ERROR
+| Y3 | Math ERROR
+| Y4 | Range ERROR
+| Y5 | Cannot Simplify
+| Y6 | Circular ERROR
+| Y7 | Stack ERROR
+| Y8 | Argument ERROR
+| Y9 | Dimension ERROR
+| YA | Cannot Solve
+| YB | Time Out
+| YC | Variable ERROR
+| YE | Memory ERROR
+| YG | No Operator
+| YH | Not Defined
+| YZ | Nesting ERROR<br>(ERREUR branch in French)
+| Z0 | Setup
+| Z1 | Setup (2nd level)
 
 ## S data
 The length of S data is generally 28 characters, and it stores the calculator’s setting data, such as angle units, etc.
@@ -832,13 +832,13 @@ The 15th bit is also supplemented with 0. This is essentially the same as the li
 <mark style="background-color: #9EBAFD">Area ④</mark> is the symbol of the fraction, 
 if it is a positive number, it will be <mark style="background-color: #9EBAFD">01</mark>, and if it is a negative number, it will be <mark style="background-color: #9EBAFD">06</mark>.
 
-1. $$ \displaystyle\frac{2}{3} $$ is expressed as  
+1. $$ \frac{2}{3} $$ is expressed as  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A3</u>000000000000</mark><mark style="background-color: #FFE828">03</mark><mark style="background-color: #9EBAFD">01</mark>
-2. $$ \displaystyle-\frac{2}{300} $$ is expressed as  
+2. $$ -\frac{2}{300} $$ is expressed as  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A300</u>0000000000</mark><mark style="background-color: #FFE828">05</mark><mark style="background-color: #9EBAFD">06</mark>  
 In the above two examples, underlines are used to mark the length of the fraction. You can see that <mark style="background-color: #61D156">area ②</mark> of both is <mark style="background-color: #61D156">2A3000000000000</mark>,
 but due to the difference in <mark style="background-color: #FFE828">area ③</mark>, the values expressed are different.
-3. $$ \displaystyle\frac{56789}{1234}>1 $$, converted to a mixed fraction $$ \displaystyle 46\frac{25}{1234} $$, then  
+3. $$ \frac{56789}{1234}>1 $$, converted to a mixed fraction $$ 46\frac{25}{1234} $$, then  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>46A25A1234</u>00000</mark><mark style="background-color: #FFE828">10</mark><mark style="background-color: #9EBAFD">01</mark>  
 
 Under normal circumstances, the length of a fraction cannot exceed 10.
@@ -860,21 +860,21 @@ The coefficient of the radical expression is a fraction.
 The numerator can have up to 2 digits.
 The two fractions can be different, and the two fractions will be displayed when displayed.
 
-For example, there is radical 1: $$ \displaystyle\sqrt{aaa}\times\frac{bb}{cc} $$ and radical 2: $$ \displaystyle\sqrt{ddd}\times\frac{ee}{ff} $$, they will be stored in <mark style="background-color: #61D156">area ②</mark> as  
+For example, there is radical 1: $$ \sqrt{aaa}\times\frac{bb}{cc} $$ and radical 2: $$ \sqrt{ddd}\times\frac{ee}{ff} $$, they will be stored in <mark style="background-color: #61D156">area ②</mark> as  
 <mark style="background-color: #61D156">aaa bb cc 0 ddd ee ff</mark>  
 It occupies exactly 15 bits, and the 0 in the middle can be understood as a separator.
 
 At this time, <mark style="background-color: #FFE828">area ③</mark> is used to indicate the positive and negative sign of radical formula 2, and <mark style="background-color: #9EBAFD">area ④</mark> is used to indicate the positive and negative sign of radical formula 1.
 Similarly, the positive number is 01, and the negative number is 06.
 
-1. $$ \displaystyle -\frac{12\sqrt{345}}{67} + \frac{78\sqrt{777}}{89} $$ will be stored as  
+1. $$ -\frac{12\sqrt{345}}{67} + \frac{78\sqrt{777}}{89} $$ will be stored as  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u></mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>
-2. $$ \displaystyle\sqrt{3} $$ can be written as $$ \displaystyle\sqrt{000}\times\frac{00}{01}+\sqrt{003}\times\frac{01}{01} $$, then  
+2. $$ \sqrt{3} $$ can be written as $$ \sqrt{000}\times\frac{00}{01}+\sqrt{003}\times\frac{01}{01} $$, then  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>000</u>00<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #FFE828">00</mark><mark style="background-color: #9EBAFD">01</mark>
-3. $$ \displaystyle 2-\frac{\sqrt{7}}{2} $$ can be written as $$ \displaystyle \sqrt{001}\times\frac{02}{01}-\sqrt{007}\times\frac{01}{02} $$, then  
+3. $$ 2-\frac{\sqrt{7}}{2} $$ can be written as $$ \sqrt{001}\times\frac{02}{01}-\sqrt{007}\times\frac{01}{02} $$, then  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>007</u>01<u>02</u></mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #9EBAFD">01</mark>
 
-For example 1 above, when the calculator displays the result, it will be divided into $$ \displaystyle\frac{5226\sqrt{777}-1068\sqrt{345}}{5963} $$ for display, but if this formula is entered into the input area for calculation,
+For example 1 above, when the calculator displays the result, it will be divided into $$ \frac{5226\sqrt{777}-1068\sqrt{345}}{5963} $$ for display, but if this formula is entered into the input area for calculation,
 it will exceed the limit of the radical format, and the result will be converted and stored as floating point format.
 
 ### ERROR value
@@ -897,12 +897,12 @@ CW II increases the precision to 23 digits and uses 14 bytes and 28 digits to st
 The last 4 digits are also used to store <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark>.
 The floating point number format needs to occupy the middle 23-bit <mark style="background-color: #61D156">area ②</mark>, and the remaining numerical formats are padded with 0s.
 
-1. $$ \displaystyle 9.0000000000000000075528 $$ is represented as  
+1. $$ 9.0000000000000000075528 $$ is represented as  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">90000000000000000075528</mark><mark style="background-color: #FFE828">00</mark><mark style="background-color: #9EBAFD">01</mark>
-2. $$ \displaystyle \frac{570}{991} $$ as  
+2. $$ \frac{570}{991} $$ as  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156"><u>570A991</u>0000000000000000</mark><mark style="background-color: #FFE828">07</mark><mark style="background-color: #9EBAFD">01</mark>  
 The length of the fraction still cannot exceed 10
-3. $$ \displaystyle -\frac{12\sqrt{345}}{67}+\frac{78\sqrt{777}}{89} $$ as  
+3. $$ -\frac{12\sqrt{345}}{67}+\frac{78\sqrt{777}}{89} $$ as  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>345</u>12<u>67</u>0<u>777</u>78<u>89</u>00000000</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #9EBAFD">06</mark>  
 8 zeroes are padded in <mark style="background-color: #61D156">area ②</mark>
 
@@ -918,14 +918,254 @@ If the calculation result is relatively "simple", such as the result of a numeri
 
 If the calculation result is relatively "complicated" and the calculator uses two parts for display, such as the Pol and Rec coordinate operations, the ÷R remainder operation, the result of an imaginary number in Complex mode, etc., it is necessary to parse the two parts of the R data and determine the method for displaying the two values according to the corresponding parameters in the M data.
 
-1. After exporting the calculation result $$ \displaystyle 1.23456789112345\times 10^{67} $$, the R data will be  
+1. After exporting the calculation result $$ 1.23456789112345\times 10^{67} $$, the R data will be  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">67</mark>00000000000000000000  
 Please note that the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> have been reversed.
-2. The result of calculating $$ \displaystyle \textrm{Pol(1, −1)} $$ is $$ \displaystyle r = \sqrt{2},\theta = −45 $$, which is derived as  
+2. The result of calculating $$ \textrm{Pol(1, −1)} $$ is $$ r = \sqrt{2},\theta = −45 $$, which is derived as  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>000</u>00<u>01</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">00</mark><mark style="background-color: #FFE828">01</mark><mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">450000000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">01</mark>  
-3. $$ \displaystyle \frac{5}{7} - \sqrt{2} + \sqrt{3}i + 2i $$, at this time the first part is the real part and the last part is the imaginary part  
+3. $$ \frac{5}{7} - \sqrt{2} + \sqrt{3}i + 2i $$, at this time the first part is the real part and the last part is the imaginary part  
 <mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>05<u>07</u>0<u>002</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>02<u>01</u>0<u>003</u>01<u>01</u></mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">01</mark>
 
 In addition to ordinary calculations, when calculations involving equations, inequalities, matrices, vectors, and other calculations contain multiple results, there will be a storage flag for this data at the beginning of the R data, followed by numerical value parts, each of which is also 20 bits, and the results corresponding to the numerical values of each part will be decided based on the M data and the storage flag at the beginning of the R data.
 
-\<WIP\>
+### Equation mode
+For example, when solving a certain linear equation, we get $$ x = -\frac{9}{7}, y = \frac{15}{7} $$. At this time, the R data is (newlines have been added to improve readability)  
+&emsp;EQ0  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">1A2A70000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">05</mark>  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">2A1A70000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">05</mark>
+
+EQ indicates the result in Equation mode, and EQ0 indicates that the equation has a solution. If it is EQ1, it is "Infinite Solution"; EQ2 is "No Solution"; EQ4 is "No Real Roots";
+if a model is able to find the minimum and maximum values of its corresponding function when solving a cubic equation, it will start with EQ5, or EQ0 if it is not supported.
+
+### Matrix, Vector
+If in matrix mode, the calculation result is a matrix
+$$
+\begin{bmatrix}
+0 & 1.41421356237309 & 1.23456789112345\times 10^{67} \\
+−4.56987123\times 10^{-6} & \frac{1}{7} & -\frac{8}{9} \\
+\end{bmatrix}
+$$  
+The R data will be  
+&emsp;MT23  
+&emsp;<mark style="background-color: #E4E5E8">00000000000000000000</mark>  
+&emsp;<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">141421356237309</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">00</mark>  
+&emsp;<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">67</mark>  
+&emsp;<mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">456987123000000</mark><mark style="background-color: #9EBAFD">05</mark><mark style="background-color: #FFE828">94</mark>  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">1A7000000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">03</mark>  
+&emsp;<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156">8A9000000000000</mark><mark style="background-color: #9EBAFD">06</mark><mark style="background-color: #FFE828">03</mark>
+
+The M at the beginning means Matrix; MT means MatAns. 2 and 3 indicate that the matrix is 2×3 in size. The following values are the values from left to right and top to bottom of the matrix.
+
+Similarly, if it is a vector result, it starts with VT, that is, VctAns, but for two- and three-dimensional vectors, VT02 and VT03 will be used instead of VT12 and VT13.
+
+### Inequality
+In Inequality mode, there are similar expressions:
+
+| Prefix | Meaning
+|--|--
+| IN01 | All Real Numbers
+| IN02 | No Solution
+| IN03 | $$ x=a $$
+| IN04 | $$ x\neq a $$
+| IN05 | $$ x<a $$
+| IN06 | $$ x\leq a $$
+| IN07 | $$ a<x $$
+| IN08 | $$ a\leq x $$
+| IN09 | $$ a<x<b $$
+| IN0A | $$ a\leq x\leq b $$
+| IN0B | $$ x<a, b<x $$
+| IN0C | $$ x\leq a, b\leq x $$
+| IN0D | $$ x=a, b\leq x $$
+| IN0E | $$ x\neq a\mathrm{\ and\ }x<b $$
+| IN0F | $$ x\leq a, x=b $$
+| IN10 | $$ a<x\mathrm{\ and\ }x\neq b $$
+| IN11 | $$ a<x<b,c<x $$
+| IN12 | $$ a\leq x\leq b,c\leq x $$
+| IN13 | $$ x<a,b<x<c $$
+| IN14 | $$ x\leq a,b\leq x\leq c $$
+| IN15 | $$ x\neq a\mathrm{\ and\ }x\neq b$$
+| IN16 | $$ x=a,x=b $$
+| IN17 | $$ x\neq a\mathrm{\ and\ }x<b,c<x $$
+| IN18 | $$ x=a,b\leq x\leq c $$
+| IN19 | $$ a<x<c\mathrm{\ and\ }x\neq b $$
+| IN1A | $$ x\leq a,x=b,c\leq x $$
+| IN1B | $$ x<a,b<x\mathrm{\ and\ }x\neq c $$
+| IN1C | $$ a\leq x\leq b,x=c $$
+| IN1D | $$ a<x<b,c<x<d $$
+| IN1E | $$ x<a,b<x<c,d<x $$
+| IN1F | $$ a\leq x\leq b, c\leq x\leq d $$
+| IN20 | $$ x\leq a,b\leq x\leq c,d\leq x $$
+
+At this time, the R data starts with INxx, and is followed by each value in the order of corresponding $$ abcd $$.
+
+### Verify mode
+The R data in verification mode has only 20 bits, representing a value, "True" is 1, "False" is 0.
+
+## Q data
+Q data is newly added to CW II, and its format is similar to R data.
+It consists of two parts, each part is 28 bits, and the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> should also be reversed.
+
+It is also necessary to determine the display format of the read value based on the M data. For example, in Complex mode, $$ \frac{2}{3} - sqrt{7}i + 9i $$ is expressed as  
+<mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A3</u>00000000000000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">03</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>09<u>01</u>0<u>007</u>01<u>01</u>00000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark>  
+
+Q data will only be exported in normal calculations. Multiple results in equation, matrix and other modes are still exported in R data. (Casio lazy dog programmer confirmed)
+
+## C data
+The storage format of C data is similar to that of R data.
+Each part is also 20 bits, and the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> are **<u>reversed</u>**.
+
+When in Matrix or Vector mode, the QR code generated by any operation will carry C data, which contains defined matrix or vector information.
+Similar to R data, if it starts with MA23, it means MatA, and the size is 2×3; VA03 means VctA, a three-dimensional vector.
+
+When in Equation and Inequality mode, the C data represents the input equation coefficient.
+At this time, there is no flag at the beginning, and the type of equation or inequality is determined based on the M data to determine the number of coefficients.
+
+When in Distribution or Math Box mode, the C number carries the input parameter value.
+The type and number are determined by the corresponding sub-mode, and there is also no mark at the beginning.
+
+## P data
+A QR code generated in Table mode will carry this data, indicating the start value, end value and step of the generated number table.
+The data consists of three parts, each part has 9 digits.
+The representation method is similar to the 20-digit number of R data, but it is regarded as a floating point number, so the identifier at the beginning is removed.
+There are only 6 significant digits.
+The positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> are also reversed,
+and <mark style="background-color: #9EBAFD">area ④</mark> only retains the second half of the digits (<mark style="background-color: #9EBAFD">0</mark>, <mark style="background-color: #9EBAFD">1</mark>, <mark style="background-color: #9EBAFD">5</mark> or <mark style="background-color: #9EBAFD">6</mark>).
+
+For example, the P data with a start value of $$ 9.8765\times ^{-43} $$, an end value of $$ 12345 $$, and a step length of $$ 4567.89 $$ will be expressed as  
+&emsp;<mark style="background-color: #61D156">987650</mark><mark style="background-color: #9EBAFD">0</mark><mark style="background-color: #FFE828">57</mark>  
+&emsp;<mark style="background-color: #61D156">123450</mark><mark style="background-color: #9EBAFD">1</mark><mark style="background-color: #FFE828">04</mark>  
+&emsp;<mark style="background-color: #61D156">456789</mark><mark style="background-color: #9EBAFD">1</mark><mark style="background-color: #FFE828">03</mark>
+
+## V data
+In function table mode, if the defined f(x) or g(x) expression contains variables, the generated QR will carry the data.
+
+The format is similar to P data, the length is also 9 digits, and the effective digits are only 6 digits.
+The data stored in CW I are the values of ABCDEFyM in order. If it is CW II, the last one is the value of the z variable.
+
+## T data
+### Spreadsheet mode
+Different from the previous Matrix and other modes where all values are exported in order, the QR code exported from the spreadsheet only carries the values written into the cells with data.
+This is achieved by encoding the writing status of the cells.
+
+The T data of the data table starts with SP, followed by 60-bit cell identifier data to identify which cell has a value.
+The identifier data is compressed by converting binary to hexadecimal, and the order is column first, then row.
+
+For example, if there is data in rows 1, 3, and 4 of column A, from top to bottom, if the value is written, it will be represented by 1, and if it is not written, it will be represented by 0,
+at this time, you will get $$ 1011_{(2)} $$, that is, $$ B_{(16)} ) $$, so the first 3 characters of T data are obtained as SPB.
+By analogy, the numerical writing status of the remaining cells is obtained, and converted into hexadecimal representation.
+
+Since each column has 45 rows of data, the calculator uses 12 characters to fully represent a column (whether the cell in row 45 writes data or not will make the last character either
+$$ 0000_{(2)} = 0_{(16)} $$, or $$ 1000_{(2)} = 8_{(16)} $$). There are 5 columns of cells, so 60 characters are used as cell identifiers.
+What follows these 60 characters is the value of the cell where the data has been written.
+
+That is to say, **divide the 60 characters after SP into 12 parts, convert them into binary, add 0 to the front if there are less than 48 digits, and then remove the last 3 digits, the resulting 45 numbers will represent the data writing status of 45 cells in each column in turn.**
+
+Formulas cannot be exported in Spreadsheet mode, the exported data only has numerical values,
+the format is similar to P data, and there are only 6 significant digits.
+If the formula generates an ERROR, the exported data of the corresponding cell starts with Fx, corresponding to the respective ERROR type.
+
+### Statistics mode
+In statistics mode, the data in the statistics list is exported. The numerical format is also similar to P data. There are only 6 significant digits and should occupy 9 characters.
+
+But at this time, the T data uses compressed storage. The 9 characters are divided into 3 parts, regarded as decimal numbers, and then converted into 32 decimal numbers.
+In this way, its number of digits is reduced to 2 digits, one numerical value. The occupancy is reduced from the original 9 characters to 1.
+
+For example, the format of $$ 1.23456\times 10^{78} $$ written as P data is <mark style="background-color: #61D156">123456</mark><mark style="background-color: #9EBAFD">1</mark><mark style="background-color: #FFE828">78</mark>, and
+
+$$
+123_{(10)} = 3R_{(32)}\\
+456_{(10)} = E8_{(32)}\\
+178_{(10)} = 5I_{(32)}
+$$
+
+then the value will be expressed as 3RE85I
+
+In turn, the encoded T data is divided into every 2 characters, regarded as a 32-digit number, converted into a decimal number, and then spliced in sequence to obtain the original numerical storage format.
+
+The order of exporting data is row first, then column, and the number of columns (x columns, y columns and frequency) needs to be determined based on the M data.
+
+### Distribution pattern
+When using the distribution calculation type of list calculation, the results of the current calculation can be exported, and the data is in T data.
+There are also only 6 valid digits, and every 9 characters represent one piece of data, without compression.
+
+## Expression character principles
+When inputting an expression, each character has a corresponding storage method inside the calculator, and their mapping relationship is the well-known "first-level character table".
+The ClassWiz series began to introduce double-byte characters. Generally, the high-order FA, FB, FD, FE, and the low-order values 01-EF are meaningful characters.
+Therefore each character takes 1 or 2 bytes to store.
+
+If it is a linear input format, you only need to search and replace each hexadecimal character in the character table to convert it into readable characters.
+But in the case of mathematical input, special processing must be done to the natural writing template.
+
+Currently, ClassWiz has 14 natural writing symbol templates. Among them, recurring decimals have been adjusted according to the habits of different regions, and there are 3 expression methods.
+
+| Natural writing template | Source code
+|--|--
+| $$ XX\frac{YY}{ZZ} $$ | 18 1F 1D 1A XX 1B 1A YY 1B 1A ZZ 1B 1E
+| $$ \dot{X}\dot{X}\ \overline{XX}\ (XX) $$ | 2F 1A XX 1B
+| $$ \sum_{x=YY}^{ZZ}(XX) $$ | 50 1A XX 1C YY 1C ZZ 1B
+| $$ \int_{x=YY}^{ZZ}(XX) $$ | 51 1A XX 1C YY 1C ZZ 1B
+| $$ \frac{\mathrm{d}}{\mathrm{d} x}(XX)\biggr\rvert_{x=YY} $$ | 52 1A XX 1C YY 1B
+| $$ \prod_{x=YY}^{ZZ}(XX) $$ | 53 1A XX 1C YY 1C ZZ 1B
+| $$ \rvert XX \rvert $$ | 68 1A XX 1B
+| $$ e^{XX} $$ | 72 1A XX 1B
+| $$ 10^{XX} $$ | 73 1A XX 1B
+| $$ \sqrt{XX} $$ | 74 1A XX 1B
+| $$ \log_{XX}(YY) $$ | 7D 1A XX 1C YY 1B
+| $$ \frac{XX}{YY} $$ | C8 1D 1A XX 1B 1A YY 1B 1E 
+| $$ \Box ^{XX} $$ | $$ \Box $$ C9 1A XX 1B
+| $$ \sqrt[XX]{YY} $$ | CA 1D 1A XX 1B 1A YY 1B 1E
+
+XX, YY, and ZZ in the template symbols in the above table correspond to the corresponding positions of the source code in sequence and can be nested.
+In the source code, 1A, 1B, 1D, and 1E can be seen as pairs of brackets `()`; 1C is similar to a comma, or `),(`; 1F is special and is only used with 18, a mixed fraction. 
+
+## Algorithm command storage principle
+In algorithm mode, characters with the high byte F9 are used to store commands.
+
+TI-Planet has compiled a mapping of the characters and corresponding commands used by fx-92+ Spéciale Collège: (added English text for fx-92B Secondaire)
+```
+F901 : end of line
+F902 : end of program
+F903 : nop / empty line
+F905 ... 00 : Avancer de ... (Move)
+F906 ... 00 : Tourner de  ... (Turn)
+F907 ... 00 : S'orienter à ... (Direction)
+F908 ... 00 ... 00 : Aller à x=... ; y=... (Go to x,y)
+F909 : Stylo écrit (Pen Down)
+F90A : Stylo relevé (Pen Up)
+F90B ... 00 ... 00 : ... → ... (mettre var à/Set Variable to)
+F90C ... 00 : ? → ... (Demander valeur/Ask and assign)
+F90D3100 : "Oui" (Yes)
+F90D3200 : "Non" (No)
+F90D3300 : "Nombre?" (Number?)
+F90D3400 : "Résultat:" (Result :)
+F90E ... 00 : Afficher résult ... (Show Result)
+F90F3100 : Style Flèche (Arrow Style)
+F90F3200 : Style Croix (Cross Style)
+F910 : Attendre (Wait)
+F911 ... 00 : Répéter ... (Repeat)
+F912 : ⤴ (end of Répéter/Repeat)
+F913 ... 00 : Répéter jusqu'à ... (Repeat Until)
+F914 : ⤴ (end of Répéter jusqu'à/Repeat Until)
+F915 ... 00 : Si ... Alors [... Fin] (If ... Then [... End])
+F916 : Fin (End) (end of Si/Alors / If/Then)
+F917 ... 00 : Si ... Alors [... Sinon ... Fin] (If ... Then [... Else ... End])
+F918 : Sinon (Else)
+F919 : Fin (End) (end of Si/Alors/Sinon / If/Then/Else)
+```
+
+The editable area in the command stores the expression as it is entered, and uses 00 as the terminator for data input in a single command.
+
+The command data is not stored in the input area (the first buffer), but in a place relatively behind the memory area.
+
+## E data, G data
+In modes other than algorithm, the exported E data is the hexadecimal digits of the characters in the current input area and is exported as is without any change.
+
+In algorithm mode, the source code of the command is exported to the E data as is.
+
+G data is the expression of g(x) derived in Table mode.
+
+## References
+1. 【991+boring tutorial】Set Ans=2/0, and the principle can be retained after booting. [https://tieba.baidu.com/p/1899977141](https://tieba.baidu.com/p/1899977141)
+2. 【Technology】Research on internal numerical storage. [https://tieba.baidu.com/p/2793407170](https://tieba.baidu.com/p/2793407170)
+3. 【ClassWiz Joint Test】Comparison of Casio flagship models 991CNX/JP900/991DEX/991SPX. [https://tieba.baidu.com/p/3894270548](https://tieba.baidu.com/p/3894270548)
+4. Classwiz/fx-92+SC tokens encoding. [https://tiplanet.org/forum/viewtopic.php?f=27&t=21662](https://tiplanet.org/forum/viewtopic.php?f=27&t=21662)
