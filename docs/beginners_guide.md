@@ -98,3 +98,5 @@ Then convert the bytes to tokens:
 ³√( 1 $
 ```
 And finally, type the hackstring on real hardware! If successful, you should see a small line at the bottom left of the screen, meaning you succeeded.
+
+Also, note that you have to know *how* to input the hackstring *first*, or else nothing will come out of this.
