@@ -1,0 +1,86 @@
+---
+title: CWI RAM addresses
+layout: default
+---
+
+Some RAM addresses on CWI (tested with CY-23D Ver-- emulator ROM).
+
+If an address has [AAAAA/BBBBB] after its description, AAAAA is 0, BBBBB is 1.
+
+- `D10EH` <word, little-endian>: Function pressed. Usually contains the 1-byte or 2-byte character pressed, but can be different values.
+  - [OPTN]: `FC01`
+  - [SHIFT] [7]: `FC02`
+  - [SHIFT] [8]: `FC03`
+  - [SHIFT] [9]: `FC04`
+  - [SHIFT] [4]: `FC05`
+  - [SHIFT] [STO]: `FC06`
+  - [SHIFT] [OPTN]: `FC07`
+  - [↑]: `FC1C`
+  - [↓]: `FC1D`
+  - [→]: `FC1E`
+  - [←]: `FC1F`
+  - Mode chosen: `FC24`
+  - I/O mode change: `FC25`
+  - Input area clear: `FC26`
+  - [SHIFT] [=]: `FC2D`
+  - [=]: `FC30`
+  - (Base-N) BIN: `FC32`
+  - (Base-N) OCT: `FC33`
+  - (Base-N) DEC: `FC34`
+  - (Base-N) HEX: `FC35`
+  - [ENG]: `FC38`
+  - [SHIFT] [ENG]: `FC39`
+  - [S⇔D]: `FC3A`
+  - [SHIFT] [S⇔D]: `FC3B`
+  - [CALC]: `FC3C`
+  - [SHIFT] [CALC]: `FC3D`
+  - [ALPHA] [DEL]: `FC3F`
+  - Statistics Calc: `FC40`
+  - Element chosen in Periodic Table/Option chosen in Algorithm mode: `FC42`
+- `D110H`: Modifiers byte.
+  - Bit 3 = SHIFT
+  - Bit 2 = ALPHA
+  - Bit 0 = STO
+  - Remaining bits are unused.
+- `D111H` + `D112H`: Current mode and submode respectively. See [Mode code](casiocalc/docs/classwiz_qr.html#mode-code-14) for more info.
+- `D113H`: Screen state.
+  - 0: Calculation
+  - 1: Mode menu
+  - 2: Setup menu
+  - 3: All other menus
+- `D11AH`: Number format.
+  - 0: Norm1
+  - 4: Norm2
+  - 8: Fix
+  - 9: Sci
+- `D11BH`: Fix/Sci number count (0-9).
+- `D11CH`: Decimal mark. [Comma/Dot]
+- `D11DH`: Angle unit.
+  - 4: Degree
+  - 5: Radian
+  - 6: Gradian
+- `D11EH`: Input mode. [LineI/MathI]
+- `D11FH`: Fraction result. [d/c / ab/c]
+- `D120H`: Complex result. [r∠θ/a+bi]
+- `D121H`: Statistics mode frequency toggle. [Off/On]
+- `D122H`: Recurring decimal toggle. [Off/On]
+- `D123H`: Simplify mode. [Auto/Manual]
+- `D124H`: Output mode. [MathO(LineO)/DecimalO]
+- `D125H`: Auto power off time. [10 min./60 min.]
+- `D126H`: Table type. [f(x)/f(x),g(x)]
+- `D127H`: Engineering symbol toggle. [Off/On]
+- `D128H`: Digit seperator toggle. [Off/On]
+- `D129H`: MultiLine font size.
+  - 0A: Small Font
+  - 0E: Normal Font
+- `D12AH`: Equation complex root toggle. [Off/On]
+- `D12BH`: Language byte. (will vary between models)
+- `D12CH`: Spreadsheet: Auto re-calculation toggle. [Off/On]
+- `D12DH`: Spreadsheet: Formula result toggle. [Formula/Value]
+- `D12EH`: QR code version (3 / 11)
+- `D12FH`: Algorithm: Background.
+  - 0: Axes
+  - 1: Axes/Grid
+  - 2: Axes/Label
+  - 3: None
+- `D130H`: Algorithm: Unit setting. [pixels/units]
