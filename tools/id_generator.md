@@ -1,6 +1,7 @@
 ---
 title: Calculator ID generator
 layout: default
+parent: Tools
 ---
 
 Welcome to the calculator ID generator! Type the first 20 characters of your desired calculator ID (no dashes, case sensitive), and we'll do some funky calculation to get the last 4 characters.
@@ -14,7 +15,7 @@ This tool does **NOT** check the validity of the ID. However we can give you som
 - The calculated last 4 characters **must be uppercase**.
 
 <input id="calcid" placeholder="First 20 characters of ID">
-<button class="btn" onclick="main()">Generate</button>
+<button id="gen" class="btn" onclick="main()">Generate</button>
 
 <p id="result" />
 <script>
@@ -69,15 +70,23 @@ function calc_id(id_f20) {
     return er4;
 }
 
+function write(string) {
+	document.getElementById("result").innerHTML = string;
+	document.getElementById("gen").disabled = false;
+}
+
 function main() {
-	document.getElementById("result").innerHTML = "<i>Hang on...</i>";
+	document.getElementById("gen").disabled = true;
 	
 	let id_f20_raw = document.getElementById("calcid").value;
-	if (id_f20_raw.length < 20) {
-		document.getElementById("result").innerHTML = `Whoops! You only typed in ${id_f20_raw.length} characters. I need ${20 - id_f20_raw.length} more characters!`;
+	if (id_f20_raw.length == 1) {
+		write(`You typed in 1 character. Like, seriously, what.`);
+		return;
+	} else if (id_f20_raw.length < 20) {
+		write(`Whoops! You only typed in ${id_f20_raw.length} characters. I need ${20 - id_f20_raw.length} more!`);
 		return;
 	} else if (id_f20_raw.length > 20) {
-		document.getElementById("result").innerHTML = `Whoops! You typed in ${id_f20_raw.length} characters. That's way too much. I need ${id_f20_raw.length - 20} less characters!`;
+		write(`Whoops! You typed in ${id_f20_raw.length} characters. That's way too much, I need ${id_f20_raw.length - 20} less!`);
 		return;
 	}
 	
@@ -85,10 +94,10 @@ function main() {
 	id = id_f20_raw + calc_id(id_f20).toString(16).toUpperCase();
 	
 	try {
-		document.getElementById("result").innerHTML = `<details><summary>Your ID:</summary><pre>${id}</pre><button class="btn" onclick="copy()">Copy</button></details>`;
+		write(`<details><summary>Your ID:</summary><pre>${id}</pre><button class="btn" onclick="copy()">Copy</button> If not working you can select and copy the ID that way.</details>`);
 	}
 	catch(err) {
-		document.getElementById("result").innerHTML = "Crap! Something screwed up somewhere.<br>" + err.message;
+		write(`Crap! Something screwed up somewhere.<br>${err.message}`);
 	}
 }
 
