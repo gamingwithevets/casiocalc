@@ -59,7 +59,7 @@ function calc_id(id_f20) {
 
         console.log(
             `Word @ index ${i}: ${conv(word)}\n` +
-            `XORed w/ ${er4_old.}: ${conv(rotation_p1)}\n` +
+            `XORed w/ ${conv(er4_old)}: ${conv(rotation_p1)}\n` +
             `Left rotation: ${conv(rotation_l)}\n` +
             `Right rotation: ${conv(rotation_r)}\n` +
             `XORed rotations: ${conv(rotation_xor)}\n` +
