@@ -58,16 +58,20 @@ function calc_id(id_f20) {
         er4 = (rotation_xor + rotation_p1) & 0xffff;
 
         console.log(
-            `Word @ index ${i}: ${word.toString(16).toUpperCase()}\n` +
-            `XORed w/ ${er4_old.toString(16).toUpperCase()}: ${rotation_p1.toString(16).toUpperCase()}\n` +
-            `Left rotation: ${rotation_l.toString(16).toUpperCase()}\n` +
-            `Right rotation: ${rotation_r.toString(16).toUpperCase()}\n` +
-            `XORed rotations: ${rotation_xor.toString(16).toUpperCase()}\n` +
-            `Added with XOR: ${er4.toString(16).toUpperCase()}\n`
+            `Word @ index ${i}: ${conv(word)}\n` +
+            `XORed w/ ${er4_old.}: ${conv(rotation_p1)}\n` +
+            `Left rotation: ${conv(rotation_l)}\n` +
+            `Right rotation: ${conv(rotation_r)}\n` +
+            `XORed rotations: ${conv(rotation_xor)}\n` +
+            `Added with XOR: ${conv(er4)}\n`
         );
     }
 
     return er4;
+}
+
+function conv(string) {
+	return string.toString(16).toUpperCase().padStart(4, "0");
 }
 
 function write(string) {
@@ -91,7 +95,7 @@ function main() {
 	}
 	
 	let id_f20 = new TextEncoder().encode(id_f20_raw);
-	id = id_f20_raw + calc_id(id_f20).toString(16).toUpperCase();
+	id = id_f20_raw + conv(calc_id(id_f20));
 	
 	try {
 		write(`<details><summary>Your ID:</summary><pre>${id}</pre><button class="btn" onclick="copy()">Copy</button> If not working you can select and copy the ID that way.</details>`);
