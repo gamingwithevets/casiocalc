@@ -826,7 +826,7 @@ Here are some examples to facilitate understanding
 ### Fraction format
 The fraction format flag is <mark style="background-color: #FFA53C">2</mark>.
 When storing a fraction, if the absolute value of the fraction is <1, the fraction line is represented by A and stored in <mark style="background-color: #61D156">area ②</mark> in the form of <mark style="background-color: #61D156">numerator A fraction</mark>, with 0 padding after less than 15 digits.
-If the absolute value of the fraction is >1, it needs to be converted into a mixed number and then stored in the form of <mark style="background-color: #61D156">integer A numerator A fraction</mark>.
+If the absolute value of the fraction is >1, it needs to be converted into a mixed fraction and then stored in the form of <mark style="background-color: #61D156">integer A numerator A fraction</mark>.
 The 15th bit is also supplemented with 0. This is essentially the same as the linear input representation of the fraction.
 <mark style="background-color: #FFE828">Area ③</mark> is the "length" of the fraction, as explained below with an example.
 <mark style="background-color: #9EBAFD">Area ④</mark> is the symbol of the fraction, 
