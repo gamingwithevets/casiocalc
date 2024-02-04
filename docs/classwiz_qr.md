@@ -191,7 +191,7 @@ It is assumed that the serial number stores information about the work produced 
 ## M data
 ### Mode code (1~4)
 In the normal calculation interface, digits 1~2 represent the main mode and digits 3~4 are the submode.
-For example, if Calculate mode has no submode, it will be C100; if it's the "1-Variable" submode in Statistics Mode, it will be 0301.
+For example, if Calculate mode has no submode, it will be C100; if it's the "1-Variable" submode in Statistics mode, it will be 0301.
 
 The following table lists the mode codes and corresponding names with no submode.
 
