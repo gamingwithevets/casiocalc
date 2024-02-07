@@ -1067,8 +1067,8 @@ If the formula generates an ERROR, the exported data of the corresponding cell s
 ### Statistics mode
 In statistics mode, the data in the statistics list is exported. The numerical format is also similar to P data. There are only 6 significant digits and should occupy 9 characters.
 
-But at this time, the T data uses compressed storage. The 9 characters are divided into 3 parts, regarded as decimal numbers, and then converted into 32 decimal numbers.
-In this way, its number of digits is reduced to 2 digits, one numerical value. The occupancy is reduced from the original 9 characters to 1.
+But at this time, the T data uses compressed storage. The 9 characters are divided into 3 parts, regarded as decimal numbers, and then converted into **base 32**,
+so that its number of digits is reduced to 2 digits, the occupancy is reduced from the original 9 characters to 6.
 
 For example, the format of $$ 1.23456\times 10^{78} $$ written as P data is <mark style="background-color: #61D156">123456</mark><mark style="background-color: #9EBAFD">1</mark><mark style="background-color: #FFE828">78</mark>, and
 
@@ -1080,7 +1080,7 @@ $$
 
 then the value will be expressed as 3RE85I
 
-In turn, the encoded T data is divided into every 2 characters, regarded as a 32-digit number, converted into a decimal number, and then spliced in sequence to obtain the original numerical storage format.
+In turn, the encoded T data is divided into every 2 characters, regarded as base 32, converted into a decimal number, and then spliced in sequence to obtain the original numerical storage format.
 
 The order of exporting data is row first, then column, and the number of columns (x columns, y columns and frequency) needs to be determined based on the M data.
 
