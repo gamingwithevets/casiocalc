@@ -889,7 +889,7 @@ If you enter $$ =\div $$ in Table mode, a cell with syntax error will be created
 In other words, although all values starting with F are ERROR values, they are also reserved.
 
 ### Others
-In fact, the internal storage will also have data with flag digit 6, which is equivalent to a pointer to a matrix or vector.
+In fact, the internal storage will also have data with flag digit <mark style="background-color: #FFA53C">6</mark>, which is equivalent to a pointer to a matrix or vector.
 Since QR directly derives the values stored in the matrix, it will not be described here.
 
 ### Numerical representation of CW II
