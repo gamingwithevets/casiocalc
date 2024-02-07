@@ -1005,7 +1005,7 @@ The R data in verification mode has only 20 bits, representing a value, "True" i
 Q data is newly added to CW II, and its format is similar to R data.
 It consists of two parts, each part is 28 bits, and the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> should also be reversed.
 
-It is also necessary to determine the display format of the read value based on the M data. For example, in Complex mode, $$ \frac{2}{3} - sqrt{7}i + 9i $$ is expressed as  
+It is also necessary to determine the display format of the read value based on the M data. For example, in Complex mode, $$ \frac{2}{3} - \sqrt{7}i + 9i $$ is expressed as  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A3</u>00000000000000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">03</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>09<u>01</u>0<u>007</u>01<u>01</u>00000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark>  
 
 Q data will only be exported in normal calculations. Multiple results in equation, matrix and other modes are still exported in R data. (Casio lazy dog programmer confirmed)
