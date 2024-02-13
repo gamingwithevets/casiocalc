@@ -191,7 +191,7 @@ It is assumed that the serial number stores information about the work produced 
 ## M data
 ### Mode code (1~4)
 In the normal calculation interface, digits 1~2 represent the main mode and digits 3~4 are the submode.
-For example, if Calculate mode has no submode, it will be C100; if it's the "1-Variable" submode in Statistical Mode, it will be 0301.
+For example, if Calculate mode has no submode, it will be C100; if it's the "1-Variable" submode in Statistics mode, it will be 0301.
 
 The following table lists the mode codes and corresponding names with no submode.
 
@@ -826,7 +826,7 @@ Here are some examples to facilitate understanding
 ### Fraction format
 The fraction format flag is <mark style="background-color: #FFA53C">2</mark>.
 When storing a fraction, if the absolute value of the fraction is <1, the fraction line is represented by A and stored in <mark style="background-color: #61D156">area ②</mark> in the form of <mark style="background-color: #61D156">numerator A fraction</mark>, with 0 padding after less than 15 digits.
-If the absolute value of the fraction is >1, it needs to be converted into a mixed number and then stored in the form of <mark style="background-color: #61D156">integer A numerator A fraction</mark>.
+If the absolute value of the fraction is >1, it needs to be converted into a mixed fraction and then stored in the form of <mark style="background-color: #61D156">integer A numerator A fraction</mark>.
 The 15th bit is also supplemented with 0. This is essentially the same as the linear input representation of the fraction.
 <mark style="background-color: #FFE828">Area ③</mark> is the "length" of the fraction, as explained below with an example.
 <mark style="background-color: #9EBAFD">Area ④</mark> is the symbol of the fraction, 
@@ -889,7 +889,7 @@ If you enter $$ =\div $$ in Table mode, a cell with syntax error will be created
 In other words, although all values starting with F are ERROR values, they are also reserved.
 
 ### Others
-In fact, the internal storage will also have data with flag digit 6, which is equivalent to a pointer to a matrix or vector.
+In fact, the internal storage will also have data with flag digit <mark style="background-color: #FFA53C">6</mark>, which is equivalent to a pointer to a matrix or vector.
 Since QR directly derives the values stored in the matrix, it will not be described here.
 
 ### Numerical representation of CW II
@@ -1005,7 +1005,7 @@ The R data in verification mode has only 20 bits, representing a value, "True" i
 Q data is newly added to CW II, and its format is similar to R data.
 It consists of two parts, each part is 28 bits, and the positions of <mark style="background-color: #FFE828">area ③</mark> and <mark style="background-color: #9EBAFD">area ④</mark> should also be reversed.
 
-It is also necessary to determine the display format of the read value based on the M data. For example, in Complex mode, $$ \frac{2}{3} - sqrt{7}i + 9i $$ is expressed as  
+It is also necessary to determine the display format of the read value based on the M data. For example, in Complex mode, $$ \frac{2}{3} - \sqrt{7}i + 9i $$ is expressed as  
 <mark style="background-color: #FFA53C">2</mark><mark style="background-color: #61D156"><u>2A3</u>00000000000000000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">03</mark><mark style="background-color: #FFA53C">8</mark><mark style="background-color: #61D156"><u>001</u>09<u>01</u>0<u>007</u>01<u>01</u>00000000</mark><mark style="background-color: #9EBAFD">01</mark><mark style="background-color: #FFE828">06</mark>  
 
 Q data will only be exported in normal calculations. Multiple results in equation, matrix and other modes are still exported in R data. (Casio lazy dog programmer confirmed)
@@ -1067,8 +1067,8 @@ If the formula generates an ERROR, the exported data of the corresponding cell s
 ### Statistics mode
 In statistics mode, the data in the statistics list is exported. The numerical format is also similar to P data. There are only 6 significant digits and should occupy 9 characters.
 
-But at this time, the T data uses compressed storage. The 9 characters are divided into 3 parts, regarded as decimal numbers, and then converted into 32 decimal numbers.
-In this way, its number of digits is reduced to 2 digits, one numerical value. The occupancy is reduced from the original 9 characters to 1.
+But at this time, the T data uses compressed storage. The 9 characters are divided into 3 parts, regarded as decimal numbers, and then converted into **base 32**,
+so that its number of digits is reduced to 2 digits, the occupancy is reduced from the original 9 characters to 6.
 
 For example, the format of $$ 1.23456\times 10^{78} $$ written as P data is <mark style="background-color: #61D156">123456</mark><mark style="background-color: #9EBAFD">1</mark><mark style="background-color: #FFE828">78</mark>, and
 
@@ -1080,7 +1080,7 @@ $$
 
 then the value will be expressed as 3RE85I
 
-In turn, the encoded T data is divided into every 2 characters, regarded as a 32-digit number, converted into a decimal number, and then spliced in sequence to obtain the original numerical storage format.
+In turn, the encoded T data is divided into every 2 characters, regarded as base 32, converted into a decimal number, and then spliced in sequence to obtain the original numerical storage format.
 
 The order of exporting data is row first, then column, and the number of columns (x columns, y columns and frequency) needs to be determined based on the M data.
 
