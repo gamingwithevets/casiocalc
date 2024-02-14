@@ -1645,7 +1645,7 @@ function convert_tokens(hx) {
 }
 
 function hex_conv(e) {
-	hex.value = hex.value.replace(/[^0-9A-Fa-f ]/, '');
+	hex.value = hex.value.replace(/[^0-9A-Fa-f ]/g, '');
 	hex.value = hex.value.toUpperCase();
 	
 	let hx_str = hex.value.replace(/ /g, '');
