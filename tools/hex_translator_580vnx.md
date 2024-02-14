@@ -11,16 +11,16 @@ NOTES:
 - <span class="cwxd">&#x2592;</span> denotes garbled characters.
 
 Hex data
-<textarea rows=5 cols=50 id="hex" placeholder="Input hex data here"></textarea>
+<textarea rows=5 cols=50 id="hex" placeholder="AA BB CC DD"></textarea>
 
 Text
-<textarea rows=5 cols=50 id="text" placeholder="Input text here"></textarea>
+<textarea rows=5 cols=50 id="text" placeholder="Text here!"></textarea>
 
 Display
-<textarea rows=5 cols=28 id="display" class="cwxd" readonly></textarea>
+<textarea rows=4 cols=16 style="font-size: 20px;" id="display" class="cwxd" readonly></textarea>
 
 Tokens
-<textarea rows=5 cols=28 id="tokens" class="cwxd" readonly></textarea>
+<textarea rows=4 cols=16 style="font-size: 20px;" id="tokens" class="cwxd" readonly></textarea>
 
 <script>
 l1 = {
@@ -1645,7 +1645,9 @@ function convert_tokens(hx) {
 }
 
 function hex_conv(e) {
-	hex.value = hex.value.replace(/^[^0-9a-fA-F]+$/g, '');
+	hex.value = hex.value.replace(/[^0-9A-Fa-f ]/, '');
+	hex.value = hex.value.toUpperCase();
+	
 	let hx_str = hex.value.replace(/ /g, '');
 	if (hx_str.length > 0) {
 		let temp, txt = '', hx = [], last_f = 0, num;
