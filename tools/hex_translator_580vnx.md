@@ -1645,7 +1645,7 @@ function convert_tokens(hx) {
 }
 
 function hex_conv(e) {
-	hex.value = hex.value.replace(/^[^0-9a-fA-F]+$/, '');
+	hex.value = hex.value.replace(/^[^0-9a-fA-F]+$/g, '');
 	let hx_str = hex.value.replace(/ /g, '');
 	if (hx_str.length > 0) {
 		let temp, txt = '', hx = [], last_f = 0, num;
