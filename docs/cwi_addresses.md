@@ -3,7 +3,7 @@ title: CWI RAM addresses
 layout: default
 ---
 
-Some RAM addresses on CWI (tested with CY-23D Ver-- emulator ROM).
+Some RAM addresses on CWI (tested with `CY-23D Ver--` emulator ROM).
 
 If an address has \[AAAAA/BBBBB] after its description, AAAAA is 0, BBBBB is 1.
 
