@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'ESPScreen Large';
+  src: url('../../assets/fonts/espscreen_l.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ESPScreen Small';
+  src: url('../../assets/fonts/espscreen_s.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ClassWiz X Display';
+  src: url('../../assets/fonts/cwxd.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClassWiz CW Display';
+  src: url('../../assets/fonts/cwcwd.otf') format('opentype');
+}
+
+.espl { font-family: 'ESPScreen Large'; }
+.esps { font-family: 'ESPScreen Small'; }
+.cwxd { font-family: 'ClassWiz X Display'; }
+.cwcwd { font-family: 'ClassWiz CW Display'; }
