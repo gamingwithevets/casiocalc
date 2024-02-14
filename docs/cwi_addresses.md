@@ -42,7 +42,7 @@ If an address has \[AAAAA/BBBBB] after its description, AAAAA is 0, BBBBB is 1.
   - Bit 2 = ALPHA
   - Bit 0 = STO
   - Remaining bits are unused.
-- `D111H` + `D112H`: Current mode and submode respectively. See \[Mode code](casiocalc/docs/classwiz_qr.html#mode-code-14) for more info.
+- `D111H` + `D112H`: Current mode and submode respectively. See \[Mode code](classwiz_qr.html#mode-code-14) for more info.
 - `D113H`: Screen state.
   - 0: Calculation
   - 1: Mode menu
