@@ -3,7 +3,7 @@ title: ClassWiz QR format
 layout: default
 ---
 
-Original document by happy sheep. Translated by Steveyboi with Google Translate + DeepL Translate
+Original document by happy sheep/CADUO/喜羊羊第x代. Translated by Steveyboi with Google Translate + DeepL Translate
 
 <details open markdown="block">
 <summary>
@@ -789,9 +789,10 @@ Some data exported from QR, such as <u>R data</u>, also export the values stored
 
 Let’s first take the 10-byte and 20-digit storage method as an example to see how it is stored inside the calculator, and then talk about the similarities and differences between it and the exported data.
 
----
+<br>
 
 When the value is 0, all 20 digits are 0.
+
 If it is not 0, taking $$ 1.23456789112345\times 10^{67} $$ as an example, the value will be stored in the calculator in the following form:  
 <mark style="background-color: #FFA53C">0</mark><mark style="background-color: #61D156">123456789112345</mark><mark style="background-color: #FFE828">67</mark><mark style="background-color: #9EBAFD">01</mark>  
 <mark style="background-color: #FFA53C">Area ①</mark>: The first digit is the type flag, which marks the storage type format of the value;  
@@ -883,7 +884,7 @@ Normally no ERROR value is stored in the variable, to create an ERROR value, the
 Check the value of M is empty. Recall M directly to get a math error. Looking at the memory, the memory area where M is located begins with F3, and in the analysis of the M data described above, Y3 corresponds to a math error.
 
 ![2 Casio CW I calculator screen captures. One is showing the equation M:M=Integral(1, ×10^85-*10^99, 9×10^99), the other shows the variable menu with an empty value in M.](/casiocalc/images/classwiz_qr_5.png)
-	
+
 If you enter $$ =\div $$ in Table mode, a cell with syntax error will be created, and after exporting with QR, the value stored in that cell (how to check it will be explained later) starts with F2, which happens to be the syntax error corresponding to Y2 in the M data.
 
 In other words, although all values starting with F are ERROR values, they are also reserved.
