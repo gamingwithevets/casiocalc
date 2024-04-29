@@ -4,7 +4,7 @@ layout: default
 parent: Tools
 ---
 
-Welcome to the fx-580VN X hex translator! It can translate hex to text and vice versa, and translate hex *or* text to tokens. This was inspired by the [second level font table page on h.20142022.xyz](https://h.20142022.xyz/2-level-font).
+Welcome to the fx-580VN X hex translator! It can translate hex to text and vice versa, and translate hex *or* text to tokens. This was inspired by the [second level font table page on cwh.ca510.com](https://cwh.ca510.com/2-level-font).
 
 NOTES:
 - Tokens with underscores denote 0-character tokens.
