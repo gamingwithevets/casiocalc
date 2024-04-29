@@ -17,10 +17,10 @@ Text
 <textarea rows=5 cols=50 id="text" placeholder="Text here!"></textarea>
 
 Display
-<textarea rows=4 cols=16 style="font-size: 20px;" id="display" class="cwxd" readonly></textarea>
+<textarea rows=5 cols=50 style="font-size: 20px;" id="display" class="cwxd" readonly></textarea>
 
 Tokens
-<textarea rows=4 cols=16 style="font-size: 20px;" id="tokens" class="cwxd" readonly></textarea>
+<textarea rows=5 cols=50 style="font-size: 20px;" id="tokens" class="cwxd" readonly></textarea>
 
 <script>
 l1 = {
@@ -1639,6 +1639,7 @@ function convert_tokens(hx) {
 		} else {
 			string += '_';
 		}
+		string += ' ';
 	}
 
 	tokens.value = string;
