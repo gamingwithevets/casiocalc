@@ -14,7 +14,7 @@ This tool does **NOT** check the validity of the ID. However we can give you som
 - The ID must not include uppercase O.
 - The calculated last 4 characters **must be uppercase**.
 
-<input id="calcid" placeholder="First 20 characters of ID">
+<input id="calcid" maxlength="20" placeholder="First 20 characters of ID">
 <button id="gen" class="btn" onclick="main()">Generate</button>
 
 <p id="result" />
