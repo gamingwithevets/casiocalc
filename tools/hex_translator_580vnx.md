@@ -1414,7 +1414,7 @@ l2 = {
 	0xe8: '\ue02a',
 	0xe9: '\ue02c',
 	0xea: '\u21ba',
-	0xeb: '\ue02e',
+	0xeb: '\ue02d',
 	0xec: 'ⁿ',
 	0xed: '\xa0',
 	0xf010: '\ue018',
