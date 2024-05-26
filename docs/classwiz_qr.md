@@ -283,7 +283,7 @@ Distribution mode
   </tr>
   <tr>
     <td>02</td>
-    <td>Normal Cumulative Distribution<br>[Normal PD]</td>
+    <td>Normal Cumulative Distribution<br>[Normal CD]</td>
   </tr>
   <tr>
     <td>03</td>

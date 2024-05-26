@@ -1,0 +1,4 @@
+[submodule "tools/cwqr/src"]
+	path = tools/cwqr/src
+	url = https://github.com/gamingwithevets/ClassWizQR.git
+	branch = dist
