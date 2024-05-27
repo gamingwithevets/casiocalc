@@ -62,6 +62,8 @@ function parseName(l) {
 
 function main() {
 	document.getElementById('parse').disabled = true;
+	document.getElementById('result_').style = 'display: none;';
+	document.getElementById('calculation').style = 'display: none;';
 
 	try {
 		result = cwqr.parseUrl(qrUrl.value);
@@ -98,7 +100,7 @@ function main() {
 		}
 
 		/* calculation info */
-		if ('expression' in result) {
+		if (result.expression != undefined) {
 			document.getElementById('expression').src = `${latex_url_prefix}${encodeURIComponent(result.expression)}`;
 			document.getElementById('expression').alt = result.expression;
 			document.getElementById('result_templated').src = `${latex_url_prefix}${encodeURIComponent(result.result[0].latex)}`;
