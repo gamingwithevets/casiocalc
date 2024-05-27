@@ -4,7 +4,8 @@ layout: default
 parent: Tools
 ---
 
-Welcome to the ClassWiz QR code URL parser! This is a GUI frontend for [happy sheep's QR parser](https://cwqr.pages.dev), the version used here is a fork of the original.
+Welcome to the ClassWiz QR code URL parser! This is a GUI frontend for [happy sheep's QR parser](https://cwqr.pages.dev).  
+The version used here is a modified fork of the original. You can visit [this page](/casiocalc/tools/cwqr/src/) if you want to see the full raw output of the parser.
 
 NOTE: Everything is currently not fully supported.
 
