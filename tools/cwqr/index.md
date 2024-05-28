@@ -40,11 +40,20 @@ Settings:
 <ul><li>Part 2: decimal <span id="result_part2_decimal"></span><br><img id="result_part2"></li></ul>
 </ul>
 </div>
+<div id="table" style="display: none;">
+<h2>Table</h2>
+<ul><li>f(x) (+ g(x)):<br><img id="expression_table"></li>
+<li>Table range:
+<ul><li>Start: decimal <span id="tableRange_start_decimal"></span><br><img id="tableRange_start"></li></ul>
+<ul><li>End: decimal <span id="tableRange_end_decimal"></span><br><img id="tableRange_end"></li></ul>
+<ul><li>Step: decimal <span id="tableRange_step_decimal"></span><br><img id="tableRange_step"></li></ul>
+</li></ul>
+</div>
 </div>
 
 <script>
 let result;
-const latex_url_prefix = 'https://latex.codecogs.com/gif.latex?%5Cbg_black%20%5Clarge';
+const latex_url_prefix = 'https://latex.codecogs.com/png.image?%5Clarge%20%5Cdpi%7B110%7D%5Cbg%7Bblack%7D';
 
 function getRegion() {
 	let data = new FormData(document.getElementById('langsel'));
@@ -65,6 +74,7 @@ function main() {
 	document.getElementById('parse').disabled = true;
 	document.getElementById('result_').style = 'display: none;';
 	document.getElementById('calculation').style = 'display: none;';
+	document.getElementById('table').style = 'display: none;';
 
 	try {
 		result = cwqr.parseUrl(qrUrl.value);
@@ -100,20 +110,37 @@ function main() {
 			}
 		}
 
-		/* calculation info */
 		if (result.expression != undefined) {
-			document.getElementById('expression').src = `${latex_url_prefix}${encodeURIComponent(result.expression)}`;
-			document.getElementById('expression').alt = result.expression;
-			document.getElementById('result_templated').src = `${latex_url_prefix}${encodeURIComponent(result.result[0].latex)}`;
-			document.getElementById('result_templated').alt = result.result[0].latex;
-			document.getElementById('result_part1_decimal').innerHTML = result.result[1].decimal;
-			document.getElementById('result_part1').src = `${latex_url_prefix}${encodeURIComponent(result.result[1].latex)}`;
-			document.getElementById('result_part1').alt = result.result[1].latex;
-			document.getElementById('result_part2_decimal').innerHTML = result.result[2].decimal;
-			document.getElementById('result_part2').src = `${latex_url_prefix}${encodeURIComponent(result.result[2].latex)}`;
-			document.getElementById('result_part2').alt = result.result[2].latex;
+			if (result.result != undefined) {
+				/* calculation info */
+				document.getElementById('expression').src = `${latex_url_prefix}${encodeURIComponent(result.expression)}`;
+				document.getElementById('expression').alt = result.expression;
+				document.getElementById('result_templated').src = `${latex_url_prefix}${encodeURIComponent(result.result[0].latex)}`;
+				document.getElementById('result_templated').alt = result.result[0].latex;
+				document.getElementById('result_part1_decimal').innerHTML = result.result[1].decimal;
+				document.getElementById('result_part1').src = `${latex_url_prefix}${encodeURIComponent(result.result[1].latex)}`;
+				document.getElementById('result_part1').alt = result.result[1].latex;
+				document.getElementById('result_part2_decimal').innerHTML = result.result[2].decimal;
+				document.getElementById('result_part2').src = `${latex_url_prefix}${encodeURIComponent(result.result[2].latex)}`;
+				document.getElementById('result_part2').alt = result.result[2].latex;
 
-			document.getElementById('calculation').style = '';
+				document.getElementById('calculation').style = '';
+
+			} else if (result.tableRange != undefined) {
+				document.getElementById('expression_table').src = `${latex_url_prefix}${encodeURIComponent(result.expression)}`;
+				document.getElementById('expression_table').alt = result.expression;
+				document.getElementById('tableRange_start_decimal').innerHTML = result.tableRange[0].decimal;
+				document.getElementById('tableRange_start').src = `${latex_url_prefix}${encodeURIComponent(result.tableRange[0].latex)}`;
+				document.getElementById('tableRange_start').alt = result.tableRange[0].latex;
+				document.getElementById('tableRange_end_decimal').innerHTML = result.tableRange[1].decimal;
+				document.getElementById('tableRange_end').src = `${latex_url_prefix}${encodeURIComponent(result.tableRange[1].latex)}`;
+				document.getElementById('tableRange_end').alt = result.tableRange[1].latex;
+				document.getElementById('tableRange_step_decimal').innerHTML = result.tableRange[2].decimal;
+				document.getElementById('tableRange_step').src = `${latex_url_prefix}${encodeURIComponent(result.tableRange[2].latex)}`;
+				document.getElementById('tableRange_step').alt = result.tableRange[2].latex;
+
+				document.getElementById('table').style = '';
+			}
 		}
 
 		document.getElementById('report').innerHTML = 'Your results are below!';
