@@ -23,6 +23,7 @@ The similarities between the real and the copy is that the CPU has been applied 
 because the LCD has tens of pins, and yet we don't have this LCD's diagram. So do we give up? The answer is "no", we still use the Arduino (more specifically the ESP8266) to display the LCD, with a familiar powerful assistant, that is a relay.
 
 First, notice that the PCB has a lot of test points, labeled K01, K02,... K34. If you use a wire to connect K01 and K33, the LCD will display the number 1. After testing points for a while you will get a table like the following (if using Casio):
+
 | | K01 | K02 | K03 |
 |--|--|--|--|
 | K21 | / | AC | M+
@@ -36,6 +37,7 @@ First, notice that the PCB has a lot of test points, labeled K01, K02,... K34. I
 
 The next step is, instead of manually connecting the 2 points of the row and column together to display numbers on the LCD, we will use the relay which is already very familiar with our community. Imagine now you want to use the ESP8266 to display the
 number 9 on the LCD, you connect according to the following diagram:
+
 | ESP8266 | Relay | Casio
 |--|--|--|
 | 3.3V | +
