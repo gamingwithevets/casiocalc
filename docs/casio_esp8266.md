@@ -56,6 +56,7 @@ Then go to [my git](https://github.com/johnkimdinh/DADA-with-esp8266) to downloa
 
 Open the flasher, input the `eg5.bin` file path:
 ![](/casiocalc/images/casio_esp8266/3520_812450-1486350903-0-2.png)
+
 Then go back to the Operation tab, choose the correct COM port and click Flash to flash the program.
 ![](/casiocalc/images/casio_esp8266/3560_123450-1486350986-0-3.png)
 
