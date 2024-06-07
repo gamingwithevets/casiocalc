@@ -14,10 +14,10 @@ knocking on your door for questioning.
 
 ## 1. Principle
 The first thing we want to do is remove the screws on the back side to see the circuit board. If you use an original Casio calculator the board looks quite majestic:
-![](http://k3.arduino.vn/img/2017/04/23/0/3674_81211213-1492898959-0-pcb-top.png)
+![](/casiocalc/images/casio_esp8266/3674_81211213-1492898959-0-pcb-top.png)
 
 For me, I only dared to sacrifice a crappy Chinese calculator so the PCB is much more simplistic:
-![](http://k2.arduino.vn/img/2017/04/23/0/3689_88211213-1492899138-0-wp-20170308-17-19-31-pro.jpg)
+![](/casiocalc/images/casio_esp8266/3689_88211213-1492899138-0-wp-20170308-17-19-31-pro.jpg)
 
 The similarities between the real and the copy is that the CPU has been applied a black epoxy blob so the chance of accessing to rewrite the firmware is the number zero. The next plan is using an Arduino to display the LCD. This isn't very feasible
 because the LCD has tens of pins, and yet we don't have this LCD's diagram. So do we give up? The answer is "no", we still use the Arduino (more specifically the ESP8266) to display the LCD, with a familiar powerful assistant, that is a relay.
@@ -55,9 +55,9 @@ Go to the [ESP8266's git](https://github.com/nodemcu/nodemcu-flasher) to downloa
 Then go to [my git](https://github.com/johnkimdinh/DADA-with-esp8266) to download the file `eg5.bin`.
 
 Open the flasher, input the `eg5.bin` file path:
-![](http://k3.arduino.vn/img/2017/02/06/0/3520_812450-1486350903-0-2.png)
+![](/casiocalc/images/casio_esp8266/3520_812450-1486350903-0-2.png)
 Then go back to the Operation tab, choose the correct COM port and click Flash to flash the program.
-![](http://k1.arduino.vn/img/2017/02/06/0/3560_123450-1486350986-0-3.png)
+![](/casiocalc/images/casio_esp8266/3560_123450-1486350986-0-3.png)
 
 ## 3. Let's get cheat sheets
 After flashing the code the ESP8266 will show an AP with the name **<u>WIFI CALCULATOR</u>**. Its password is **<u>9876543210</u>**. After successful connection, open a web browser (e.g. Chrome), go to the page 192.168.4.1, input the number you want to
